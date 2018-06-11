@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    body{
+
+        background-image: url(../images/login2.jpg);
+        position: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+
+    }
+    .container-principal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        overflow: auto;
+        /* background-attachment: fixed, scroll; */
+        background: rgba(0, 0, 0, 0.7); /* Just to visualize the extent */
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .container-principal .navegador {
+        /* background: rgba(0, 0, 0, .3); */
+        /* position: fixed; */
+        margin: 25px;
+        width: 90%;
+        /* text-decoration: none; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav .nav-boton{
+        /* width: 90%; */
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px 10px 20px;
+        border-radius: 3px;
+    }
+
+    nav div .nav-boton i {
+        margin-right: 5px;
+
+    }
+
+    @media screen and (max-width: 700px){
+
+        body{
+            background-size: auto ;
+
+        }
+
+        .container-principal .navegador {
+            /* background: rgba(0, 0, 0, .3); */
+            margin-top: 30px;
+            /* margin-left: 5px; */
+            width: 100%;
+            font-size: .90em;
+            /* text-decoration: none; */
+
+        }
+
+        nav .nav-boton{
+            /* width: 90%; */
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px 5px 10px;
+            border-radius: 3px;
+        }
+        nav div .nav-boton i {
+            margin-right: 3px;
+
+        }
+    }
+
+    nav .nav-boton:hover {
+        background-color: rgb(88, 29, 173,.5);
+    }
+
+    .container-login {
+        /* background: rgb(0, 0, 0,.1); */
+        width: 100%;
+        height: 100%;
+
+        /* display: flex; */
+        /* align-items: flex-start; */
+    }
+    .formulario{
+
+        width: 100%;
+        /* height: 100%; */
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+
+    }
+    .container-login  .formulario > div {
+        background-color: hsla(0,0%,100%,0.08);
+        border-radius: 35px;
+        padding: 1em;
+        width: 30%;
+        margin: 5px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+
+    @media screen and (max-width: 1050px){
+        .formulario{
+            flex-direction: column;
+
+        }
+        .container-login  .formulario > div{
+            width: 60%;
+        }
+
+    }
+
+    @media screen and (max-width: 650px){
+
+        .container-login  .formulario > div{
+            width: 80%;
+        }
+
+    }
+    @media screen and (max-width: 450px){
+
+        .container-login  .formulario > div{
+            width: 90%;
+        }
+
+    }
+    @media screen and (max-width: 380px){
+
+        .container-login .formulario  input{
+            position: relative;
+            right: 8px;
+        }
+
+    }
+
+    .formulario .select-combo{
+        width: 100%;
+    }
+    .formulario .select-combo select {
+        padding: 10px;
+        border-radius: 30px;
+        border: none;
+        width: 100%;
+        background:#ce7209;
+        color: white;
+
+    }
+    .formulario div select::after {
+        position: absolute;
+         content: "";
+         top: 14px;
+         right: 10px;
+         width: 0;
+         height: 0;
+         border: 6px solid transparent;
+         border-color: #fff transparent transparent transparent;
+
+    }
+
+    .container-login .formulario  div >.input-1 {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        margin: 6px;
+        width: 100%;
+
+
+
+        background-color: hsla(0,0%,100%,.1);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        /* justify-content: space-around; */
+        /* align-content:center; */
+        border-radius: 35px;
+    }
+
+    .container-login .formulario  .double-component{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        margin: -9px;
+        /* width: 100%; */
+        display: flex;
+        /* flex-wrap: wrap; */
+        flex-direction: row;
+        /* justify-content: space-around; */
+        /* align-content:center; */
+        border-radius: 35px;
+    }
+    .container-login .formulario  .double-component   div {
+        border-radius: 35px;
+        background-color: hsla(0,0%,100%,.1);
+        padding-top: 12px;
+        padding-bottom: 12px;
+        width: 100%;
+        /* margin: 3px; */
+
+        display: flex;
+        flex-direction: row;
+    }
+
+    .double-div {
+        width: 100%;
+    }
+
+
+
+    .container-login .formulario  .icon {
+        /* padding: 0; */
+        /* margin: 0; */
+        color: #fff;
+        font-size: 1.2em;
+    }
+
+    .container-login .formulario  input{
+        background-color: hsla(0,0%,100%,0);
+        color: #fff;
+        border-color: hsla(0,0%,100%,.5);
+        border: none;
+
+    }
+
+.container-login .formulario .button{
+	margin-top: 5px;
+}
+
+    .container-login .formulario .button button{
+         background-color: #6e92d7;
+        color: #fff;
+        border-color: hsla(0,0%,100%,.5);
+        border: none;
+        padding: 10px 60px 10px 60px;
+        border-radius: 35px;
+    }
+
+    /* .container-login .formulario .input-2 {
+
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+
+    } */
+
+
+    /*  ======================================================================*/
