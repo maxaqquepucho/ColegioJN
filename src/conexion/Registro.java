@@ -65,7 +65,6 @@ public class Registro extends HttpServlet {
 		beanRegistrar BeanRegistrar = new beanRegistrar();
 		BeanRegistrar.setNombre(nombre);
 		BeanRegistrar.setApellido(apellido);
-		BeanRegistrar.setEmail(email);
 		BeanRegistrar.setDNI(DNI);
 		BeanRegistrar.setNumCel(numcel);
 		BeanRegistrar.setNumTelf(numtel);
@@ -75,6 +74,7 @@ public class Registro extends HttpServlet {
 		BeanRegistrar.setSexo(sexo);
 		BeanRegistrar.setLinkimagen(imagen);
 		
+		BeanRegistrar.setEmail(email);
 		BeanRegistrar.setUsuario(usuario);
 		BeanRegistrar.setContrasenia(contrasenia);
 		BeanRegistrar.setConfcontrasenia(confcontrasenia);
