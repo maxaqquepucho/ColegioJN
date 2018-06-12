@@ -20,20 +20,5 @@ public class beanUser
 	public void setContrasenia(String contrasenia) {
 		Contrasenia = contrasenia;
 	}
-	public String getImagen() {
-		return imagen;
-	}
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
-	}
-	public String getMail() {
-		return mail;
-	}
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-	
-	
-
 	
 }
