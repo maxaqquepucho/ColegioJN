@@ -27,7 +27,7 @@
 
              <nav class="navegador ">
                  <div >
-                     <a class="nav-boton" href="index.jsp"><i class="icon-home"></i><span>JESUS DE NASARETH</span></a>
+                     <a class="nav-boton" href="index.html"><i class="icon-home"></i><span>JESÚS DE NAZARETH</span></a>
                  </div>
                  <div >
                      <a class="nav-boton" href="index.jsp"><i class="icon-enter"></i><span>Login</span></a>
