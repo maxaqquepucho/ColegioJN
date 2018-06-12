@@ -105,6 +105,12 @@ public class beanRegistrar
 		this.confcontrasenia = confcontrasenia;
 	}
 	
+	public void mostrar() 
+	{
+		System.out.println(getNombre()+" "+getApellido()+" "+getEmail()+" "+getDNI()+" "+getNumCel()+" "+getNumTelf()+" "+getDireccion()+" "+getFecnac()+" "+getTipo()+" "+getSexo()+" "+getLinkimagen()
+		+" "+getUsuario()+" "+getContrasenia()+" "+getConfcontrasenia());
+	}
+	
 	
 	
 }

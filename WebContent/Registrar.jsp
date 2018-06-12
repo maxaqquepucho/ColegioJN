@@ -93,10 +93,16 @@
 <!--    ----------------------------------------------------------------------------------------------------- -->
                         <div class="" >
                             <div class=" double-component ">
-                                <div class="1">
+                            <div class="select-combo">
+                                <select name="sexo">
+                                    <option value="1">Maculino</option>
+                                    <option value="2">Femenino</option>
+                                </select>
+                            </div>
+                               <!--<div class="1">
                                     <i class="icon-man-woman icon ml-3"></i>
                                     <input class="col-10" type="text" id="name" name="sexo" placeholder="Sexo"/>
-                                </div>
+                                </div>-->
                                 <div class="1">
                                     <i class="icon-camera icon ml-3"></i>
                                     <input class="col-10" type="text" id="name" name="imagen" placeholder="Link de Imagen"/>
