@@ -1,11 +1,13 @@
 package bean;
 
+import java.sql.Date;
+
 public class beanRegistrar 
 {
 	String nombre;
 	String apellido;
 	String email;
-	String fecnac;
+	Date fecnac;
 	String DNI;
 	String numCel;
 	String numTelf;
@@ -36,10 +38,10 @@ public class beanRegistrar
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getFecnac() {
+	public Date getFecnac() {
 		return fecnac;
 	}
-	public void setFecnac(String fecnac) {
+	public void setFecnac(Date fecnac) {
 		this.fecnac = fecnac;
 	}
 	public String getDNI() {

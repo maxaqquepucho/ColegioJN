@@ -2,6 +2,7 @@ package conexion;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Controlador.LlenarDatos;
 import Controlador.Registrar;
+import bean.beanRegistrar;
 
 /**
  * Servlet implementation class Registro
@@ -34,19 +36,7 @@ public class Registro extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		PrintWriter salida = response.getWriter();
-		String mail=request.getParameter("mail");
-		String usuario= request.getParameter("usuario");
-		String contrasenia=request.getParameter("contrasenia");
-		Registrar reg = new Registrar();
 		
-		if(reg.registrar(mail, usuario, contrasenia)) 
-		{
-			response.sendRedirect("menu.jsp");
-		}else 
-		{
-			response.sendRedirect("Registrar.jsp");
-		}
 	}
 
 	/**
@@ -54,7 +44,53 @@ public class Registro extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		PrintWriter salida = response.getWriter();
+		String nombre=request.getParameter("nombre");
+		String apellido=request.getParameter("apellido");
+		String email=request.getParameter("email");
+		String DNI=request.getParameter("DNI");
+		String numcel=request.getParameter("numcel");
+		String numtel=request.getParameter("numtel");
+		String direc=request.getParameter("direc");
+		Date fecnac=Date.valueOf(request.getParameter("fecnac"));
+		String tipo=request.getParameter("tipo");
+		String sexo=request.getParameter("sexo");
+		String imagen=request.getParameter("imagen");
+		
+		String usuario=request.getParameter("usuario");
+		String contrasenia=request.getParameter("contrasenia");
+		String confcontrasenia=request.getParameter("confcontrasenia");
+		
+		beanRegistrar BeanRegistrar = new beanRegistrar();
+		BeanRegistrar.setNombre(nombre);
+		BeanRegistrar.setApellido(apellido);
+		BeanRegistrar.setEmail(email);
+		BeanRegistrar.setDNI(DNI);
+		BeanRegistrar.setNumCel(numcel);
+		BeanRegistrar.setNumTelf(numtel);
+		BeanRegistrar.setDireccion(direc);
+		BeanRegistrar.setFecnac(fecnac);
+		BeanRegistrar.setTipo(tipo);
+		BeanRegistrar.setSexo(sexo);
+		BeanRegistrar.setLinkimagen(imagen);
+		
+		BeanRegistrar.setUsuario(usuario);
+		BeanRegistrar.setContrasenia(contrasenia);
+		BeanRegistrar.setConfcontrasenia(confcontrasenia);
+		
+		
+		
+		/*Registrar reg = new Registrar();
+		
+		if(reg.registrar(mail, usuario, contrasenia)) 
+		{
+			response.sendRedirect("menu.jsp");
+		}else 
+		{
+			response.sendRedirect("Registrar.jsp");
+		}*/
+		
 	}
 
 }
