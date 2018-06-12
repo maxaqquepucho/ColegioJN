@@ -16,10 +16,10 @@
 
                 <nav class="navegador">
                     <div class="">
-                        <a class="nav-boton " href="index.jsp"><i class="icon-home"></i><span>JESÚS DE NAZARETH</span></a>
+                        <a class="nav-boton " href="index.html"><i class="icon-home"></i><span>JESÚS DE NAZARETH</span></a>
                     </div>
                     <div class="" >
-                        <a class="nav-boton" href="index.jsp"><i class="icon-enter"></i><span>Login</span></a>
+                        <a class="nav-boton" href="login.jsp"><i class="icon-enter"></i><span>Login</span></a>
                         <a class="nav-boton" href="Registrar.jsp"><i class="icon-enter"></i><span>Registrar</span></a>
 
                     </div>
