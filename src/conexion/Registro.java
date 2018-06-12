@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Controlador.Consultas;
+import Controlador.LlenarDatos;
+import Controlador.Registrar;
 
 /**
  * Servlet implementation class Registro
@@ -37,9 +38,9 @@ public class Registro extends HttpServlet {
 		String mail=request.getParameter("mail");
 		String usuario= request.getParameter("usuario");
 		String contrasenia=request.getParameter("contrasenia");
-		Consultas cons = new Consultas();
+		Registrar reg = new Registrar();
 		
-		if(cons.registrar(mail, usuario, contrasenia)) 
+		if(reg.registrar(mail, usuario, contrasenia)) 
 		{
 			response.sendRedirect("menu.jsp");
 		}else 

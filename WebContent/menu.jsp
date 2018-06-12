@@ -1,4 +1,4 @@
-<%@page import="Controlador.Consultas"%>
+<%@page import="Controlador.LlenarDatos"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -105,8 +105,8 @@
                          </div>
                        </nav>
                        <%
-                       Consultas con = new Consultas();
-                       String admin=beanUser.getUsuario();
+                       	LlenarDatos con = new LlenarDatos();
+                                              String admin=beanUser.getUsuario();
                        %>
 
                    <div class="container ">
