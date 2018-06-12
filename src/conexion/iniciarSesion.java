@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Controlador.Consultas;
+import Controlador.Login;
 import bean.beanUser;
 
 /**
@@ -37,12 +38,12 @@ public class iniciarSesion extends HttpServlet {
 
 			String usuario= request.getParameter("user");
 			String password=request.getParameter("pass");
-			Consultas cons = new Consultas();
+			Login log = new Login();
 			beanUser BeanUser = new beanUser();
 			BeanUser.setUsuario(request.getParameter("user"));
 			request.setAttribute("beanUser", BeanUser);
 
-			if(cons.autenticacion(usuario, password))
+			if(log.autenticacion(usuario, password))
 			{
 				
 				request.getRequestDispatcher("menu.jsp").forward(request, response);
