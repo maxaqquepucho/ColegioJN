@@ -30,14 +30,16 @@
  while(rs.next())
  {
 	 
- }
 %>
 <div>
 	<h1>Modificar Registro</h1>
-<br>
+<br><br>
 <form action=" ">
+	ID: 
+	<input type="text" name="txtNombre" value="<%=rs.getInt("idPersona")%>">
+	<br><br>
 	Tipo:
-	<select name="tipo">
+	<select name="tipo" >
      <option value="1">Alumno</option>
      <option value="2">Profesor</option>
      <option value="3">Asistente</option>
@@ -45,39 +47,40 @@
     </select>
     <br><br>
 	Nombre: 
-	<input type="text" name="txtNombre">
+	<input type="text" name="txtNombre" value="<%=rs.getString("Nombre") %>" >
 	<br><br>
 	Apellido: 
-	<input type="text" name="txtApellido">
+	<input type="text" name="txtApellido" value="<%=rs.getString("Apellido") %>">
 	<br><br>
 	DNI: 
-	<input type="text" name="txtDNI">
+	<input type="text" name="txtDNI" value="<%=rs.getString("DNI") %>">
 	<br><br>
 	UBIGEO: 
-	<input type="text" name="txtUBIGEO">
+	<input type="text" name="txtUBIGEO" value="<%=rs.getString("idUBIGEO") %>">
 	<br><br>
 	Direccion: 
-	<input type="text" name="txtDireccion">
+	<input type="text" name="txtDireccion" value="<%=rs.getString("Direccion") %>">
 	<br><br>
 	FecNac: 
-	<input type="text" name="txtFecNac">
+	<input type="text" name="txtFecNac" value="<%=rs.getString("fecNac") %>">
 	<br><br>
 	Sexo:
-	<select name="tipo">
+	<select name="tipo" value="<%=rs.getString("Sexo") %>">
      <option value="1">M</option>
      <option value="2">F</option>
     </select>
     NumCel: 
-	<input type="text" name="txtNumcel">
+	<input type="text" name="txtNumcel" value="<%=rs.getString("NumeroCelular") %>">
 	<br><br>
 	NUmTel: 
-	<input type="text" name="txtNumtel">
+	<input type="text" name="txtNumtel" value="<%=rs.getString("NumeroTelefono") %>">
 	<br><br>
 	idUsuario: 
-	<input type="text" name="txtidUsuario">
+	<input type="text" name="txtidUsuario" value="<%=rs.getInt("idUsuario") %>">
 	<br><br>
 	<a href="menu.jsp">Regresar</a>
 </form>
+<%} %>
 </div>
 
 </body>
