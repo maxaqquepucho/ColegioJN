@@ -2,21 +2,44 @@ package Controlador;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import conexion.conexion;
 
 public class Registrar extends conexion
 {	
+	public int maxiduser()
+	{
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql="SELECT MAX(idUsuario) FROM colegio.usuario";
+
+		try
+		{
+			ps= getConexion().prepareStatement(sql);
+			rs=ps.executeQuery();
+			String cadena="";
+
+			while(rs.next())
+			{
+				cadena=rs.getString("MAX(idUsuario)");
+			}
+			
+			return (Integer.parseInt(cadena)+1);
+
+
+		} catch (Exception e) {e.printStackTrace();}
+		return  0;
+	}
+	
 	public boolean registrarPersona(String tipo, String nombre, String apellido, String dni, String direc, Date fecnac,
 			String sexo, String numcel, String numtel)
 	{
 		
 		PreparedStatement ps = null;
-		String idUsuario="SELECT MAX(idUsuario) FROM usuario";
-		String sql="INSERT INTO persona (idTipo, Nombre, Apellido, DNI, idUBIGEO, Direccion, fecNac, Sexo, NumeroCelular, NumeroTelefono, idUsuario)"
+		String sql="INSERT INTO colegio.persona (idTipo, Nombre, Apellido, DNI, idUBIGEO, Direccion, fecNac, Sexo, NumeroCelular, NumeroTelefono, idUsuario)"
 				+ " VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-		int idUsuarioint=Integer.parseInt(idUsuario)+1;
-		String auxidusuario=String.valueOf(idUsuarioint);
+		
 		
 
 		try
@@ -26,13 +49,13 @@ public class Registrar extends conexion
 			ps.setString(2, nombre);
 			ps.setString(3, apellido);
 			ps.setString(4, dni);
-			ps.setString(5, "");
+			ps.setString(5, null);
 			ps.setString(6, direc);
 			ps.setDate(7, fecnac);
 			ps.setString(8, sexo);
 			ps.setString(9, numcel);
 			ps.setString(10, numtel);
-			ps.setString(11, auxidusuario);
+			ps.setInt(11, maxiduser());
 			
 
 			if (ps.executeUpdate()==1)

@@ -80,6 +80,7 @@ public class Registro extends HttpServlet {
 		BeanRegistrar.setConfcontrasenia(confcontrasenia);
 		
 		BeanRegistrar.mostrar();
+		BeanRegistrar.registrar();
 		
 		/*Registrar reg = new Registrar();
 		

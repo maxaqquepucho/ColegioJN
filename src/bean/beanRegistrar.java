@@ -2,6 +2,8 @@ package bean;
 
 import java.sql.Date;
 
+import Controlador.Registrar;
+
 public class beanRegistrar 
 {
 	String nombre;
@@ -74,8 +76,12 @@ public class beanRegistrar
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public String getSexo() {
-		return sexo;
+	public String getSexo() 
+	{
+		if(sexo.equalsIgnoreCase("1")) 
+		{return "M";}
+		else {return "F";}
+		
 	}
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
@@ -109,6 +115,13 @@ public class beanRegistrar
 	{
 		System.out.println(getNombre()+" "+getApellido()+" "+getEmail()+" "+getDNI()+" "+getNumCel()+" "+getNumTelf()+" "+getDireccion()+" "+getFecnac()+" "+getTipo()+" "+getSexo()+" "+getLinkimagen()
 		+" "+getUsuario()+" "+getContrasenia()+" "+getConfcontrasenia());
+	}
+	public void registrar() 
+	{
+		Registrar reg= new Registrar();
+		reg.registrarPersona(getTipo(), getNombre(), getApellido(), getDNI(), getDireccion(), getFecnac(), getSexo(), getNumCel(), getNumTelf());
+		reg.registrarUsuario(getEmail(), getUsuario(), getContrasenia(), getLinkimagen());
+		
 	}
 	
 	
