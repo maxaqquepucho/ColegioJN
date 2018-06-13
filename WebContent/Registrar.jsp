@@ -108,8 +108,6 @@
                                 <input class="col-10" type="text" id="name" name="usuario" placeholder="Usuario"/>
                             </div>
 
-
-
                             <div class=" double-component ">
                                 <div class="1">
                                     <i class="icon-key2 icon ml-3"></i>
