@@ -119,9 +119,9 @@ public class beanRegistrar
 	public void registrar() 
 	{
 		Registrar reg= new Registrar();
-		reg.registrarPersona(getTipo(), getNombre(), getApellido(), getDNI(), getDireccion(), getFecnac(), getSexo(), getNumCel(), getNumTelf());
 		reg.registrarUsuario(getEmail(), getUsuario(), getContrasenia(), getLinkimagen());
-		
+		reg.registrarPersona(getTipo(), getNombre(), getApellido(), getDNI(), getDireccion(), getFecnac(), getSexo(), getNumCel(), getNumTelf());
+			
 	}
 	
 	

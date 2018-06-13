@@ -8,6 +8,35 @@ import conexion.conexion;
 
 public class Registrar extends conexion
 {	
+	public boolean registrarUsuario(String mail, String usuario, String contrasenia, String imagen)
+	{
+		PreparedStatement ps = null;
+
+		String sql="INSERT INTO usuario (mail ,usuario, contrasenia, imagen) VALUES(?,?,?,?)";
+
+		try
+		{
+			ps = getConexion().prepareStatement(sql);
+			ps.setString(1, mail);
+			ps.setString(2, usuario);
+			ps.setString(3, contrasenia);
+			ps.setString(4, imagen);
+
+			if (ps.executeUpdate()==1)
+			{
+				System.out.println("Registro Exitoso");
+				return true;
+			}else {System.out.println("Registro incompleto");}
+
+		} catch (Exception e) {
+			System.out.println("Registro incompleto");
+			e.printStackTrace();
+		}
+
+
+		return false;
+	}
+	
 	public int maxiduser()
 	{
 		PreparedStatement ps = null;
@@ -18,14 +47,15 @@ public class Registrar extends conexion
 		{
 			ps= getConexion().prepareStatement(sql);
 			rs=ps.executeQuery();
-			String cadena="";
+			int cadena=0;
 
 			while(rs.next())
 			{
-				cadena=rs.getString("MAX(idUsuario)");
+				cadena=rs.getInt("MAX(idUsuario)");
+				System.out.println(cadena);
 			}
 			
-			return (Integer.parseInt(cadena)+1);
+			return cadena;
 
 
 		} catch (Exception e) {e.printStackTrace();}
@@ -68,33 +98,6 @@ public class Registrar extends conexion
 			System.out.println("Registro incompleto");
 			e.printStackTrace();
 		}
-		return false;
-	}
-	
-	public boolean registrarUsuario(String mail, String usuario, String contrasenia, String imagen)
-	{
-		PreparedStatement ps = null;
-
-		String sql="INSERT INTO usuario (mail ,usuario, contrasenia, imagen) VALUES(?,?,?,?)";
-
-		try
-		{
-			ps = getConexion().prepareStatement(sql);
-			ps.setString(1, mail);
-			ps.setString(2, usuario);
-			ps.setString(3, contrasenia);
-			ps.setString(4, imagen);
-
-			if (ps.executeUpdate()==1)
-			{
-				System.out.println("Registro Exitoso");
-				return true;
-			}else {System.out.println("Registro incompleto");}
-
-		} catch (Exception e) {
-			System.out.println("Registro incompleto");
-			e.printStackTrace();
-		}
 		finally
 		{
 			try
@@ -103,8 +106,7 @@ public class Registrar extends conexion
 				if (ps!=null) {ps.close();}
 			} catch (Exception e2) {e2.printStackTrace();}
 		}
-
-
 		return false;
 	}
+	
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2018 a las 03:14:50
+-- Tiempo de generación: 13-06-2018 a las 16:06:24
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -126,7 +126,7 @@ CREATE TABLE `persona` (
   `Sexo` varchar(45) NOT NULL,
   `NumeroCelular` varchar(45) DEFAULT NULL,
   `NumeroTelefono` varchar(45) DEFAULT NULL,
-  `idUsuario` int(11) NOT NULL
+  `idUsuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -143,7 +143,8 @@ INSERT INTO `persona` (`idPersona`, `idTipo`, `Nombre`, `Apellido`, `DNI`, `idUB
 (8, 2, 'Rafael', 'Lopez Cordova', '76958728', NULL, 'Calle Santo toribio 224', '1999-12-30', 'M', '987654321', '7894561', 8),
 (9, 2, 'Marlon', 'Acuña Benites', '78945612', NULL, 'UCVmasnah', '1983-12-30', 'M', '965960660', '5555555', 9),
 (10, 2, 'Junior', 'Acosta Quispe', '47752505', NULL, 'Av Bertello 872', '1993-04-12', 'M', '982454754', '7987956', 10),
-(11, 1, 'omayra', 'avalos urcia', '70334346', NULL, 'Av. Los alamos 452', '2010-06-05', 'F', '987654321', '78945631', 11);
+(11, 1, 'omayra', 'avalos urcia', '70334346', NULL, 'Av. Los alamos 452', '2010-06-05', 'F', '987654321', '78945631', 11),
+(12, 1, 'alumnotest', 'test tester', '7012313', NULL, '123123 sjaa sas ', '2018-06-22', 'M', '12312', '21312', 12);
 
 -- --------------------------------------------------------
 
@@ -285,7 +286,8 @@ INSERT INTO `usuario` (`idUsuario`, `mail`, `usuario`, `contrasenia`, `imagen`) 
 (8, 'rafaelukf@gmail.com', 'rafaelLC', '1234', 'https://i.imgur.com/gf4bo9u.jpg'),
 (9, 'marlonac@gmail.com', 'macunabe', '1234', 'https://i.imgur.com/dZnokVZ.jpg'),
 (10, 'juniorandree123@gmail.com', 'juniorAQ', '1234', 'https://i.imgur.com/kx5abwD.jpg?1'),
-(11, 'omayravaur@hotmail.com', 'omayraavaur', '1234', 'nel');
+(11, 'omayravaur@hotmail.com', 'omayraavaur', '1234', 'nel'),
+(12, 'tester@hotmail.com', 'sadaas', '1234', 'ee12131sd1231');
 
 --
 -- Índices para tablas volcadas
@@ -395,7 +397,7 @@ ALTER TABLE `grupo`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `salon`
@@ -413,7 +415,7 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
@@ -456,7 +458,8 @@ ALTER TABLE `grupo`
 --
 ALTER TABLE `persona`
   ADD CONSTRAINT `fk_Persona_Tipo1` FOREIGN KEY (`idTipo`) REFERENCES `tipo` (`idTipo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Persona_UBIGEO1` FOREIGN KEY (`idUBIGEO`) REFERENCES `ubigeo` (`idUBIGEO`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Persona_UBIGEO1` FOREIGN KEY (`idUBIGEO`) REFERENCES `ubigeo` (`idUBIGEO`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_idUsusario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
 -- Filtros para la tabla `profesor`
