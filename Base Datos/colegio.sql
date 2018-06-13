@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2018 a las 07:24:10
+-- Tiempo de generación: 13-06-2018 a las 03:14:50
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -72,6 +72,7 @@ CREATE TABLE `empleado` (
 
 INSERT INTO `empleado` (`Persona_idPersona`, `salario_idsalario`) VALUES
 (5, 1),
+(9, 1),
 (4, 2),
 (3, 3),
 (6, 3),
@@ -103,7 +104,9 @@ INSERT INTO `grupo` (`idGrupo`, `limitesAlumno`, `idSalon`, `descripcion`) VALUE
 (4, 20, 4, '4to Grado'),
 (5, 20, 5, '5to Grado'),
 (6, 20, 6, '6to Grado'),
-(7, 30, 10, 'Circulo Estudiantil');
+(7, 30, 7, 'Circulo Estudiantil'),
+(8, 20, 8, 'computacion'),
+(10, 20, 10, 'computacion');
 
 -- --------------------------------------------------------
 
@@ -118,7 +121,7 @@ CREATE TABLE `persona` (
   `Apellido` varchar(45) NOT NULL,
   `DNI` varchar(45) NOT NULL,
   `idUBIGEO` int(11) DEFAULT NULL,
-  `Direccion` varchar(45) DEFAULT NULL,
+  `Direccion` varchar(45) NOT NULL,
   `fecNac` date NOT NULL,
   `Sexo` varchar(45) NOT NULL,
   `NumeroCelular` varchar(45) DEFAULT NULL,
@@ -131,13 +134,16 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`idPersona`, `idTipo`, `Nombre`, `Apellido`, `DNI`, `idUBIGEO`, `Direccion`, `fecNac`, `Sexo`, `NumeroCelular`, `NumeroTelefono`, `idUsuario`) VALUES
-(1, 2, 'Percy', 'Avalos Urcia', '70334345', NULL, 'Residencias heroes', '1996-07-15', 'M', '996007268', '7940481', 1),
-(3, 2, 'Oscar', 'Bravo Carbajal', '73260012', NULL, 'Residencias heroes', '1999-02-25', 'M', '956727151', '7894561', 3),
-(4, 2, 'Diego', 'Marcelo Castro', '12345678', NULL, 'Residencias heroes', '1990-02-25', 'M', '991049184', '7894561', 4),
+(1, 2, 'Percy', 'Avalos Urcia', '70334345', NULL, 'Av. Los alamos 452', '1996-07-15', 'M', '996007268', '7940481', 1),
+(3, 2, 'Oscar', 'Bravo Carbajal', '73260012', NULL, 'Jr. Los andes 187', '1999-02-25', 'M', '956727151', '7894561', 3),
+(4, 2, 'Diego', 'Marcelo Castro', '46924971', NULL, 'Residencias heroes', '1990-02-25', 'M', '991049184', '7894561', 4),
 (5, 2, 'Stacey', 'Camino Ingroca', '77675721', NULL, 'Residencias heroes', '1998-07-16', 'F', '940451864', '7894561', 5),
-(6, 2, 'Nilton', 'Pizarro Espinoza', '72215079', NULL, 'Residencias heroes', '1998-08-20', 'M', '991990982', '7894561', 6),
-(7, 2, 'Max', 'Aqquepucho', '70342040', NULL, 'Residencias heroes', '1998-04-29', 'M', '931130960', '7894561', 7),
-(8, 2, 'Rafael', 'Lopez Cordova', '76958728', NULL, 'Residencias heroes', '1999-12-30', 'M', '987654321', '7894561', 8);
+(6, 2, 'Nilton', 'Pizarro Espinoza', '72215079', NULL, 'Avenida 225', '1998-08-20', 'M', '991990982', '7894561', 6),
+(7, 2, 'Max', 'Aqquepucho', '70342040', NULL, 'Av. parihuanca 422', '1998-04-29', 'M', '931130960', '7894561', 7),
+(8, 2, 'Rafael', 'Lopez Cordova', '76958728', NULL, 'Calle Santo toribio 224', '1999-12-30', 'M', '987654321', '7894561', 8),
+(9, 2, 'Marlon', 'Acuña Benites', '78945612', NULL, 'UCVmasnah', '1983-12-30', 'M', '965960660', '5555555', 9),
+(10, 2, 'Junior', 'Acosta Quispe', '47752505', NULL, 'Av Bertello 872', '1993-04-12', 'M', '982454754', '7987956', 10),
+(11, 1, 'omayra', 'avalos urcia', '70334346', NULL, 'Av. Los alamos 452', '2010-06-05', 'F', '987654321', '78945631', 11);
 
 -- --------------------------------------------------------
 
@@ -156,12 +162,13 @@ CREATE TABLE `profesor` (
 
 INSERT INTO `profesor` (`idPersona`, `idGrupo`) VALUES
 (1, 1),
-(3, 2),
-(4, 3),
-(5, 4),
-(6, 5),
-(8, 6),
-(7, 7);
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 10);
 
 -- --------------------------------------------------------
 
@@ -270,12 +277,15 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`idUsuario`, `mail`, `usuario`, `contrasenia`, `imagen`) VALUES
 (1, 'percy961216@gmail.com', 'percyavaur', '1234', 'https://i.imgur.com/hurXYXU.jpg'),
-(3, 'oscarmanuelbravocrbajal@gmail.com', 'oscarBC', '1234', 'https://i.imgur.com/6daQkA1.jpg'),
+(3, 'oscarmbravoc@gmail.com', 'oscarBC', '1234', 'https://i.imgur.com/6daQkA1.jpg'),
 (4, 'marcelowork24@gmail.com', 'diegoMC', '1234', 'https://i.imgur.com/Pbn3AAj.jpg'),
 (5, 'staceyci16.98@gmail.com', 'staceyCI', '1234', 'https://i.imgur.com/r1eoZ9h.jpg'),
 (6, 'cris2008981234@gmail.com', 'cristianPE', '1234', 'https://i.imgur.com/ab7vIuD.jpg'),
 (7, 'max.light.night@gmail.com', 'maxAH', '1234', 'https://i.imgur.com/rpfZfvx.jpg'),
-(8, 'rafaelukf@gmail.com', 'rafaelLC', '1234', 'https://i.imgur.com/gf4bo9u.jpg');
+(8, 'rafaelukf@gmail.com', 'rafaelLC', '1234', 'https://i.imgur.com/gf4bo9u.jpg'),
+(9, 'marlonac@gmail.com', 'macunabe', '1234', 'https://i.imgur.com/dZnokVZ.jpg'),
+(10, 'juniorandree123@gmail.com', 'juniorAQ', '1234', 'https://i.imgur.com/kx5abwD.jpg?1'),
+(11, 'omayravaur@hotmail.com', 'omayraavaur', '1234', 'nel');
 
 --
 -- Índices para tablas volcadas
@@ -379,7 +389,7 @@ ALTER TABLE `alumno`
 -- AUTO_INCREMENT de la tabla `grupo`
 --
 ALTER TABLE `grupo`
-  MODIFY `idGrupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idGrupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
@@ -403,7 +413,7 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
@@ -446,8 +456,7 @@ ALTER TABLE `grupo`
 --
 ALTER TABLE `persona`
   ADD CONSTRAINT `fk_Persona_Tipo1` FOREIGN KEY (`idTipo`) REFERENCES `tipo` (`idTipo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Persona_UBIGEO1` FOREIGN KEY (`idUBIGEO`) REFERENCES `ubigeo` (`idUBIGEO`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Persona_Usuario1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Persona_UBIGEO1` FOREIGN KEY (`idUBIGEO`) REFERENCES `ubigeo` (`idUBIGEO`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `profesor`
