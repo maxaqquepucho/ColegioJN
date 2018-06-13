@@ -232,11 +232,10 @@ header .menu .c-3:hover { background: #002d44; }
 }
 
 .redes-sociales .twitter {background: #1da1f2;}
-.redes-sociales .instagram {background: #833ab4;}
+.redes-sociales .instagram {background: rgb(255, 0, 145);}
 .redes-sociales .facebook {background: #3b5998;}
 .redes-sociales .youtube {background: rgb(255, 0, 0);}
 .redes-sociales .whatsapp {background: rgb(35, 191, 15);}
-.redes-sociales .messenger {background: rgb(1, 130, 177);}
 
 
 /* --- MEDIAQUERIES ---  */
