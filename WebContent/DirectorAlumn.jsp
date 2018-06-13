@@ -61,6 +61,10 @@
 	<td><%=rs.getString("NumeroCelular") %></td>
 	<td><%=rs.getString("NumeroTelefono") %></td>
 	<td><%=rs.getString("idUsuario")%></td>
+	<td>
+		<a href="Editar.jsp?id=<%=rs.getInt("idPersona")%>" >Editar</a>
+		<a href="Eliminar.jsp?id=<%=rs.getInt("idPersona")%>">Eliminar</a>
+	</td>
 </tr>
 <%}%>
 </table>
