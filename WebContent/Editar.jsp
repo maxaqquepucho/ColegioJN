@@ -1,3 +1,4 @@
+<%@page import="com.sun.org.apache.xpath.internal.functions.Function"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -39,11 +40,26 @@
 	<input type="text" name="txtNombre" value="<%=rs.getInt("idPersona")%>">
 	<br><br>
 	Tipo:
-	<select name="tipo" >
-     <option value="1">Alumno</option>
-     <option value="2">Profesor</option>
-     <option value="3">Asistente</option>
-     <option value="4">Director</option>
+	
+	<%!
+	public String Alumno(int idtipo)
+	{ if(idtipo==1){return "selected";}
+	return " ";}
+	public String Profesor(int idtipo)
+	{ if(idtipo==2){return "selected";}
+	return " ";}
+	public String Asistente(int idtipo)
+	{ if(idtipo==3){return "selected";}
+	return " ";}
+	public String Director(int idtipo)
+	{ if(idtipo==4){return "selected";}
+	return " ";}
+%>
+	<select name="tipo">
+     <option value="1" <%=Alumno(rs.getInt("idTipo")) %>>Alumno</option>
+     <option value="2" <%=Profesor(rs.getInt("idTipo")) %>>Profesor</option>
+     <option value="3" <%=Asistente(rs.getInt("idTipo")) %>>Asistente</option>
+     <option value="4" <%=Director(rs.getInt("idTipo")) %>>Director</option>
     </select>
     <br><br>
 	Nombre: 
@@ -64,10 +80,19 @@
 	FecNac: 
 	<input type="text" name="txtFecNac" value="<%=rs.getString("fecNac") %>">
 	<br><br>
+		<%!
+	public String Maculino(String sexo)
+	{ if(sexo.equalsIgnoreCase("m")){return "selected";}
+	return " ";}
+	public String Femenino(String sexo)
+	{ if(sexo.equalsIgnoreCase("f")){return "selected";}
+	return " ";}
+%>
+	
 	Sexo:
-	<select name="tipo" value="<%=rs.getString("Sexo") %>">
-     <option value="1">M</option>
-     <option value="2">F</option>
+	<select name="tipo" >
+     <option value="1" <%=Maculino(rs.getString("Sexo")) %>>M</option>
+     <option value="2" <%=Femenino(rs.getString("Sexo")) %>>F</option>
     </select>
     NumCel: 
 	<input type="text" name="txtNumcel" value="<%=rs.getString("NumeroCelular") %>">
