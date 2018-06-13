@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/css1/fontello.css">
 	<link rel="stylesheet" href="css/css1/estilos.css">
 	<link rel="stylesheet" href="iconos1/style.css">
+	<link rel="stylesheet" href="css/estilos-nav.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
 	<style>
 		.logo {
@@ -26,29 +27,22 @@
 </head>
 <body>
 	<div class="container">
-		<header class="py-3">
-			<div class="row flex-nowrap justify-content-between align-items-center">
-				<div class="col-3 d-flex justify-content-start align-items-center">
-					<a href="Registrar.jsp" class="btn btn-dark btn-lg">Registrarse</a>
-				</div>
-				<div class="col-6 text-center">
-					<a href="index.html" class="text-dark text-uppercase logo">Jesús de Nazareth</a>
-				</div>
-				<div class="col-3 d-flex justify-content-end align-items-center">
-					<a href="login.jsp" class="btn btn-dark btn-lg">Acceder</a>
-				</div>
-			</div>
+		<header>
 
-			<hr>
+                <div class="logo">
+                    <img src="images/jn-logo.png" alt="" width="80" height="60">
+                    <a href="index.html">Jesús de Nazareth</a>
+                </div>
+
+                <nav>
+                    <a href="index.html"><span class="uno"></span><i class="icon-home"></i>Inicio</a>
+                    <a href="#"><span class="dos"></span><i class=" icon icon-book"></i>Articulos</a>
+                    <a href="#"><span class="tres"></span><i class=" icon icon-bubbles4"></i>Informacion</a>
+                    <a href="#"><span class="cuatro"></span><i class=" icon icon-rocket"></i>Proyectos</a>
+                    <a href="#"><span class="cinco"></span><i class=" icon icon-newspaper"></i>Noticias</a>
+                </nav>
+
 		</header>
-		<div class="nav-scroller py-1 mb-4">
-			<nav class="d-flex flex-wrap justify-content-between">
-				<a href="index.html" class="btn btn-dark btn-lg mx-2 my-1" role="button" aria-pressed="true">Menú Principal</a>
-				<a href="nosotros.html" class="btn btn-dark btn-lg mx-2 my-1" role="button" aria-pressed="true">Nosotros</a>
-				<a href="nuestrosservicios.html" class="btn btn-dark btn-lg mx-2 my-1" role="button" aria-pressed="true">Nuestros Servicios</a>
-				<a href="contactenos.html" class="btn btn-dark btn-lg mx-2 my-1" role="button" aria-pressed="true">Contáctenos</a>
-			</nav>
-		</div>
 		<div class="row slider">
 				<div class="col">
 					<div class="carousel slide" id="slider" data-ride="carousel">
