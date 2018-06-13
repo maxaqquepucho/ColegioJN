@@ -64,7 +64,7 @@ header nav {
 
 header nav a {
 
-    background: rgb(95, 46, 140);
+    background: rgb(29, 29, 29);
     padding: 20px;
     position: relative;
     text-align: center;
@@ -83,6 +83,7 @@ header nav a {
 
 header nav a i {
     position: absolute;
+    color: #fff;
     top: -20px;
 
     -webkit-transition: all .3s ease;
@@ -99,6 +100,7 @@ header nav a:hover i {
 .uno, .dos, .tres, .cuatro, .cinco {
     width: 100%;
     height: 100%;
+    color: #fff;
     position: absolute;
     top: -48px;
     border-bottom-right-radius: 0;
@@ -121,11 +123,11 @@ header nav a:hover i {
 }
 
 .tres {
-    background: rgb(46, 81, 161);
+    background: rgb(95, 46, 140);
 }
 
 .cuatro {
-    background: rgb(55, 133, 23);
+    background: rgb(31, 142, 210);
 }
 
 .cinco {
@@ -135,6 +137,7 @@ header nav a:hover i {
 a:hover .uno, a:hover .dos,
 a:hover .tres, a:hover .cuatro, a:hover .cinco {
     top: 0;
+
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
