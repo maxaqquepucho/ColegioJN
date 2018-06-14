@@ -111,11 +111,11 @@
                             <div class=" double-component ">
                                 <div class="1">
                                     <i class="icon-key2 icon ml-3"></i>
-                                    <input class="col-10" type="text" id="name" name="contrasenia" placeholder="Contraseña"/>
+                                    <input class="col-10" type="password" id="name" name="contrasenia" placeholder="Contraseña"/>
                                 </div>
                                 <div class="1">
                                     <i class="icon-key icon ml-3"></i>
-                                    <input class="col-10" type="text" id="name" name="confcontrasenia" placeholder=" Confirmar"/>
+                                    <input class="col-10" type="password" id="name" name="confcontrasenia" placeholder=" Confirmar"/>
                                 </div>
                             </div>
 
