@@ -122,18 +122,18 @@ box-shadow: 6px 5px 16px 4px rgba(0,0,0,0.39);" >
 
                                </div>
                                <div class="col-4">
-                                   <input class="form-control mt-2  " type="text" value=<%=con.Nombre(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.Apellido(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.DNI(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.Direccion(admin) %> aria-label="Search">
+                                   <input class="form-control mt-2  " type="text" value="<%=con.Nombre(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.Apellido(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.DNI(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.Direccion(admin) %>" aria-label="Search">
 
                                </div>
 
                                <div class="col-4">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.Sexo(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.NumeroCelular(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.NumeroTelefono(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.mail(admin) %> aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.Sexo(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.NumeroCelular(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.NumeroTelefono(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.mail(admin) %>" aria-label="Search">
 
                                </div>
                            </div>
