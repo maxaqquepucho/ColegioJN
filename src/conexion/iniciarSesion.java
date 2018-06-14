@@ -42,11 +42,20 @@ public class iniciarSesion extends HttpServlet {
 			beanUser BeanUser = new beanUser();
 			BeanUser.setUsuario(request.getParameter("user"));
 			request.setAttribute("beanUser", BeanUser);
+			String idTipo=log.idTipo(usuario);
+			
 			
 
 			if(log.autenticacion(usuario, password))
-			{
-				request.getRequestDispatcher("menu.jsp").forward(request, response);
+			{	
+				if(idTipo.equalsIgnoreCase("4")) 
+				{
+					request.getRequestDispatcher("menu-director.jsp").forward(request, response);
+				}
+				else 
+				{
+					request.getRequestDispatcher("menu.jsp").forward(request, response);
+				}
 				
 
 			}else

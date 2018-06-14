@@ -7,6 +7,32 @@ import conexion.conexion;
 
 public class Login extends conexion
 {
+	public String idTipo(String usuario)
+	{
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql="SELECT A.idTipo ,B.usuario FROM colegio.persona A "
+				+ "INNER JOIN colegio.usuario B ON (A.idUsuario=B.idUsuario) where usuario = ? ";
+
+		try
+		{
+			ps= getConexion().prepareStatement(sql);
+			ps.setString(1, usuario);
+			rs=ps.executeQuery();
+
+			String cadena="s";
+
+			while(rs.next())
+			{
+				cadena=rs.getString("idTipo");
+			}
+			
+			return cadena;
+
+
+		} catch (Exception e) {e.printStackTrace();}
+		return "noloC";
+	}
 	
 	public boolean autenticacion(String user,String pass)
 	{
@@ -28,16 +54,8 @@ public class Login extends conexion
 			}else{System.out.println("Login fallido");}
 
 		} catch (Exception e) {e.printStackTrace();}
-		finally
-		{
-			try
-			{
-				if (getConexion()!=null) {getConexion().close();}
-				if (ps!=null) {ps.close();}
-				if (rs!=null) {rs.close();}
-			} catch (Exception e2) {e2.printStackTrace();}
-		}
 
 		return false;
 	}
+	
 }
