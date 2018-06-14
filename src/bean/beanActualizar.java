@@ -94,7 +94,5 @@ public class beanActualizar
 		act.Modificar(getIdPersona(), getTipo(), getNombre(), getApellido(), getDNI(), 
 				getIdUBIGEO(), getDireccion(), getFecnac(), getSexo(), getNumCel(), getNumTelf());
 		
-		externalContext.redirect("foo.xhtml");
-		
 	}
 }
