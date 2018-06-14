@@ -14,19 +14,19 @@
 
 
 <%
- Connection con;
- String user="root";
- String password="";
- String url="jdbc:mysql://localhost:3306/colegio";
- String Classname="org.gjt.mm.mysql.Driver";
+ Connection con3;
+ String user2="root";
+ String password2="";
+ String url2="jdbc:mysql://localhost:3306/colegio";
+ String Classname2="org.gjt.mm.mysql.Driver";
  
- Class.forName(Classname);
- con=(Connection) DriverManager.getConnection(url, user, password);
+ Class.forName(Classname2);
+ con3=(Connection) DriverManager.getConnection(url2, user2, password2);
  
- PreparedStatement ps;
- ResultSet rs;
- ps=con.prepareStatement("Select * from colegio.persona where idTipo = 1");
- rs=ps.executeQuery();
+ PreparedStatement ps2;
+ ResultSet rs2;
+ ps2=con3.prepareStatement("Select * from colegio.persona where idTipo = 1");
+ rs2=ps2.executeQuery();
  
 %>
 <div>
@@ -47,24 +47,24 @@
 	<th>idUsuario</th>
 </tr>
 <%
-	while(rs.next()){
+	while(rs2.next()){
 %>
 <tr>
-	<td><%=rs.getInt("idPersona")%></td>
-	<td><%=rs.getString("idTipo") %></td>
-	<td><%=rs.getString("Nombre") %></td>
-	<td><%=rs.getString("Apellido") %></td>
-	<td><%=rs.getString("DNI") %></td>
-	<td><%=rs.getString("idUBIGEO") %></td>
-	<td><%=rs.getString("Direccion") %></td>
-	<td><%=rs.getDate("fecNac") %></td>
-	<td><%=rs.getString("Sexo") %></td>
-	<td><%=rs.getString("NumeroCelular") %></td>
-	<td><%=rs.getString("NumeroTelefono") %></td>
-	<td><%=rs.getString("idUsuario")%></td>
+	<td><%=rs2.getInt("idPersona")%></td>
+	<td><%=rs2.getString("idTipo") %></td>
+	<td><%=rs2.getString("Nombre") %></td>
+	<td><%=rs2.getString("Apellido") %></td>
+	<td><%=rs2.getString("DNI") %></td>
+	<td><%=rs2.getString("idUBIGEO") %></td>
+	<td><%=rs2.getString("Direccion") %></td>
+	<td><%=rs2.getDate("fecNac") %></td>
+	<td><%=rs2.getString("Sexo") %></td>
+	<td><%=rs2.getString("NumeroCelular") %></td>
+	<td><%=rs2.getString("NumeroTelefono") %></td>
+	<td><%=rs2.getString("idUsuario")%></td>
 	<td>
-		<a href="Editar.jsp?id=<%=rs.getInt("idPersona")%>" >Editar</a>
-		<a href="Eliminar.jsp?id=<%=rs.getInt("idPersona")%>">Eliminar</a>
+		<a href="Editar.jsp?id=<%=rs2.getInt("idPersona")%>" >Editar</a>
+		<a href="Eliminar.jsp?id=<%=rs2.getInt("idPersona")%>">Eliminar</a>
 	</td>
 </tr>
 <%}%>

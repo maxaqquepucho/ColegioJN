@@ -13,18 +13,18 @@
 <%@page import="java.sql.ResultSet"%>
 
 <%
- Connection con;
+ Connection con2;
  String user="root";
  String password="";
  String url="jdbc:mysql://localhost:3306/colegio";
  String Classname="org.gjt.mm.mysql.Driver";
  
  Class.forName(Classname);
- con=(Connection) DriverManager.getConnection(url, user, password);
+ con2=(Connection) DriverManager.getConnection(url, user, password);
  
  PreparedStatement ps;
  ResultSet rs;
- ps=con.prepareStatement("Select * from colegio.persona where idTipo = 2");
+ ps=con2.prepareStatement("Select * from colegio.persona where idTipo = 2");
  rs=ps.executeQuery();
  
 %>
