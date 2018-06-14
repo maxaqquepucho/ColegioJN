@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2018 a las 09:08:35
+-- Tiempo de generación: 14-06-2018 a las 10:24:56
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -32,16 +32,6 @@ CREATE TABLE `alumno` (
   `idPersona` int(11) NOT NULL,
   `idGrupo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `alumno`
---
-
-INSERT INTO `alumno` (`idPersona`, `idGrupo`) VALUES
-(10, 1),
-(11, 2),
-(12, 3),
-(13, 4);
 
 -- --------------------------------------------------------
 
@@ -154,7 +144,6 @@ INSERT INTO `persona` (`idPersona`, `idTipo`, `Nombre`, `Apellido`, `DNI`, `idUB
 (10, 1, 'Junior', 'Acosta Quispe', '47752505', NULL, 'Av Bertello 872', '1993-04-12', 'M', '982454754', '7987956', 10),
 (11, 1, 'omayra', 'avalos urcia', '70334346', NULL, 'Av. Los alamos 452', '2010-06-05', 'F', '987654321', '78945631', 11),
 (12, 1, 'alumnotest', 'test tester', '7012313', NULL, '123123 sjaa sas ', '2018-06-22', 'M', '12312', '21312', 12),
-(13, 1, 'sergio', 'mugurusa', '70567833', NULL, 'av nolo C ', '2007-05-15', 'M', '98765421', '7654321', 13),
 (14, 1, 'thomas', 'avalos urcia', '123123', NULL, 'null', '2018-06-06', '1', '123', '123', 14),
 (15, 4, 'Vilma', 'bravo huamash', '76543219', NULL, 'Jr. Los andes 187', '1984-06-06', 'F', '987654321', '7654321', 15);
 
@@ -300,7 +289,6 @@ INSERT INTO `usuario` (`idUsuario`, `mail`, `usuario`, `contrasenia`, `imagen`) 
 (10, 'juniorandree123@gmail.com', 'juniorAQ', '1234', 'https://i.imgur.com/kx5abwD.jpg?1'),
 (11, 'omayravaur@hotmail.com', 'omayraavaur', '1234', 'por actualizar'),
 (12, 'tester@hotmail.com', 'sadaas', '1234', 'por actualizar'),
-(13, 'sergiomug@gmail.com', 'mugurusa', '1234', 'por actualizar'),
 (14, 'asdasd@hotmail.com', '123', '1234', '123'),
 (15, 'vilmaBH@gmail.com', 'vilmaBH', '1234', 'https://i.imgur.com/7dGvVRD.jpg');
 
