@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2018 a las 04:13:12
+-- Tiempo de generación: 14-06-2018 a las 09:08:35
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -155,7 +155,8 @@ INSERT INTO `persona` (`idPersona`, `idTipo`, `Nombre`, `Apellido`, `DNI`, `idUB
 (11, 1, 'omayra', 'avalos urcia', '70334346', NULL, 'Av. Los alamos 452', '2010-06-05', 'F', '987654321', '78945631', 11),
 (12, 1, 'alumnotest', 'test tester', '7012313', NULL, '123123 sjaa sas ', '2018-06-22', 'M', '12312', '21312', 12),
 (13, 1, 'sergio', 'mugurusa', '70567833', NULL, 'av nolo C ', '2007-05-15', 'M', '98765421', '7654321', 13),
-(14, 1, 'thomas', 'avalos urcia', '123123', NULL, 'null', '2018-06-06', '1', '123', '123', 14);
+(14, 1, 'thomas', 'avalos urcia', '123123', NULL, 'null', '2018-06-06', '1', '123', '123', 14),
+(15, 4, 'Vilma', 'bravo huamash', '76543219', NULL, 'Jr. Los andes 187', '1984-06-06', 'F', '987654321', '7654321', 15);
 
 -- --------------------------------------------------------
 
@@ -300,7 +301,8 @@ INSERT INTO `usuario` (`idUsuario`, `mail`, `usuario`, `contrasenia`, `imagen`) 
 (11, 'omayravaur@hotmail.com', 'omayraavaur', '1234', 'por actualizar'),
 (12, 'tester@hotmail.com', 'sadaas', '1234', 'por actualizar'),
 (13, 'sergiomug@gmail.com', 'mugurusa', '1234', 'por actualizar'),
-(14, 'asdasd@hotmail.com', '123', '1234', '123');
+(14, 'asdasd@hotmail.com', '123', '1234', '123'),
+(15, 'vilmaBH@gmail.com', 'vilmaBH', '1234', 'https://i.imgur.com/7dGvVRD.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -410,7 +412,7 @@ ALTER TABLE `grupo`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `salon`
@@ -428,7 +430,7 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restricciones para tablas volcadas
