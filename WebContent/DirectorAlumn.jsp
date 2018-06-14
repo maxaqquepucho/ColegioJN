@@ -12,6 +12,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.ResultSet"%>
 
+
 <%
  Connection con;
  String user="root";
