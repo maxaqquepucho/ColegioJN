@@ -38,7 +38,7 @@
 <br><br>
 <form action="actualizar" method="post">
 	ID: 
-	<input type="text" name="txtNombre" value="<%=rs.getInt("idPersona")%>">
+	<input type="text" name="idPersona" value="<%=rs.getInt("idPersona")%>">
 	<br><br>
 	Tipo:
 	

@@ -1,6 +1,7 @@
 package bean;
 
 import java.sql.Date;
+import Controlador.Actualizar;
 
 public class beanActualizar
 {	
@@ -14,6 +15,14 @@ public class beanActualizar
 	String direccion;
 	String tipo;
 	String sexo;
+	String idPersona;
+	
+	public String getIdPersona() {
+		return idPersona;
+	}
+	public void setIdPersona(String idPersona) {
+		this.idPersona = idPersona;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -78,5 +87,11 @@ public class beanActualizar
 	public void mostrar() 
 	{
 		System.out.println(getNombre()+" "+getApellido()+" "+getDNI()+" "+getNumCel()+" "+getNumTelf()+" "+getDireccion()+" "+getFecnac()+" "+getTipo()+" "+getSexo());
+	}
+	public void Actualizar() 
+	{
+		Actualizar act = new Actualizar();
+		act.Modificar(getIdPersona(), getTipo(), getNombre(), getApellido(), getDNI(), 
+				getIdUBIGEO(), getDireccion(), getFecnac(), getSexo(), getNumCel(), getNumTelf());
 	}
 }

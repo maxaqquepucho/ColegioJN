@@ -43,7 +43,7 @@ public class actualizar extends HttpServlet {
 
 		 int idTipo=0;
 		 String  Nombre="", Apellido="", DNI="", idUBIGEO="", Direccion="", Sexo="", NumeroCelular="", NumeroTelefono="";
-		 
+		 String idPersona=request.getParameter("idPersona");
 		 idTipo=Integer.parseInt(request.getParameter("idTipo"));
 		 Nombre=request.getParameter("Nombre");
 		 Apellido=request.getParameter("Apellido");
@@ -56,6 +56,7 @@ public class actualizar extends HttpServlet {
 		 NumeroTelefono=request.getParameter("NumeroTelefono");
 		 
 		 beanActualizar BeanActualizar = new beanActualizar();
+		 BeanActualizar.setIdPersona(idPersona);
 		 BeanActualizar.setTipo(String.valueOf(idTipo));
 		 BeanActualizar.setNombre(Nombre);
 		 BeanActualizar.setApellido(Apellido);
@@ -68,6 +69,7 @@ public class actualizar extends HttpServlet {
 		 BeanActualizar.setNumTelf(NumeroTelefono);
 		 
 		 BeanActualizar.mostrar();
+		 BeanActualizar.Actualizar();
 	}
 
 }
