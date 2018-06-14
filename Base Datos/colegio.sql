@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2018 a las 16:06:24
+-- Tiempo de generación: 14-06-2018 a las 04:13:12
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -30,9 +30,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `alumno` (
   `idPersona` int(11) NOT NULL,
-  `idGrupo` int(11) NOT NULL,
-  `grado` varchar(45) NOT NULL
+  `idGrupo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `alumno`
+--
+
+INSERT INTO `alumno` (`idPersona`, `idGrupo`) VALUES
+(10, 1),
+(11, 2),
+(12, 3),
+(13, 4);
 
 -- --------------------------------------------------------
 
@@ -142,9 +151,11 @@ INSERT INTO `persona` (`idPersona`, `idTipo`, `Nombre`, `Apellido`, `DNI`, `idUB
 (7, 2, 'Max', 'Aqquepucho', '70342040', NULL, 'Av. parihuanca 422', '1998-04-29', 'M', '931130960', '7894561', 7),
 (8, 2, 'Rafael', 'Lopez Cordova', '76958728', NULL, 'Calle Santo toribio 224', '1999-12-30', 'M', '987654321', '7894561', 8),
 (9, 2, 'Marlon', 'Acuña Benites', '78945612', NULL, 'UCVmasnah', '1983-12-30', 'M', '965960660', '5555555', 9),
-(10, 2, 'Junior', 'Acosta Quispe', '47752505', NULL, 'Av Bertello 872', '1993-04-12', 'M', '982454754', '7987956', 10),
+(10, 1, 'Junior', 'Acosta Quispe', '47752505', NULL, 'Av Bertello 872', '1993-04-12', 'M', '982454754', '7987956', 10),
 (11, 1, 'omayra', 'avalos urcia', '70334346', NULL, 'Av. Los alamos 452', '2010-06-05', 'F', '987654321', '78945631', 11),
-(12, 1, 'alumnotest', 'test tester', '7012313', NULL, '123123 sjaa sas ', '2018-06-22', 'M', '12312', '21312', 12);
+(12, 1, 'alumnotest', 'test tester', '7012313', NULL, '123123 sjaa sas ', '2018-06-22', 'M', '12312', '21312', 12),
+(13, 1, 'sergio', 'mugurusa', '70567833', NULL, 'av nolo C ', '2007-05-15', 'M', '98765421', '7654321', 13),
+(14, 1, 'thomas', 'avalos urcia', '123123', NULL, 'null', '2018-06-06', '1', '123', '123', 14);
 
 -- --------------------------------------------------------
 
@@ -286,8 +297,10 @@ INSERT INTO `usuario` (`idUsuario`, `mail`, `usuario`, `contrasenia`, `imagen`) 
 (8, 'rafaelukf@gmail.com', 'rafaelLC', '1234', 'https://i.imgur.com/gf4bo9u.jpg'),
 (9, 'marlonac@gmail.com', 'macunabe', '1234', 'https://i.imgur.com/dZnokVZ.jpg'),
 (10, 'juniorandree123@gmail.com', 'juniorAQ', '1234', 'https://i.imgur.com/kx5abwD.jpg?1'),
-(11, 'omayravaur@hotmail.com', 'omayraavaur', '1234', 'nel'),
-(12, 'tester@hotmail.com', 'sadaas', '1234', 'ee12131sd1231');
+(11, 'omayravaur@hotmail.com', 'omayraavaur', '1234', 'por actualizar'),
+(12, 'tester@hotmail.com', 'sadaas', '1234', 'por actualizar'),
+(13, 'sergiomug@gmail.com', 'mugurusa', '1234', 'por actualizar'),
+(14, 'asdasd@hotmail.com', '123', '1234', '123');
 
 --
 -- Índices para tablas volcadas
@@ -385,7 +398,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `grupo`
@@ -397,7 +410,7 @@ ALTER TABLE `grupo`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `salon`
@@ -415,7 +428,7 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
