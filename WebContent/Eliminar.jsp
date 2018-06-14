@@ -29,7 +29,6 @@
  ps.executeUpdate();
  
  PreparedStatement ps2;
- int id2=Integer.parseInt(request.getParameter("id"));
  ps2=con.prepareStatement("DELETE from colegio.usuario where idUsuario = "+id);
  ps2.executeUpdate();
  response.sendRedirect("menu-director.jsp");
