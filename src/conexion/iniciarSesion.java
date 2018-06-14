@@ -51,7 +51,7 @@ public class iniciarSesion extends HttpServlet {
 
 			}else
 			{
-				response.sendRedirect("index.jsp");
+				response.sendRedirect("login.jsp");
 			}
 	}
 
