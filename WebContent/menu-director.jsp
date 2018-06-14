@@ -197,12 +197,11 @@
                     						 rs=ps.executeQuery();
 										%>
 										<div class="table-responsive">
-    										<h2>Tabla Profesores</h2>
     										<table class="table table-hover table-dark">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">idPersona</th>
-                                                        <th scope="col">idTipo</th>
+                                                        <%-- <th scope="col">idTipo</th> --%>
                                                         <th scope="col">Nombre</th>
                                                         <th scope="col">Apellido</th>
                                                         <th scope="col">DNI</th>
@@ -221,7 +220,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row"><%=rs.getInt("idPersona")%></th>
-                                                        <td><%=rs.getString("idTipo") %></td>
+                                                        <%-- <td><%=rs.getString("idTipo") %></td> --%>
                                                         <td><%=rs.getString("Nombre") %></td>
                                                         <td><%=rs.getString("Apellido") %></td>
                                                         <td><%=rs.getString("DNI") %></td>
@@ -233,10 +232,10 @@
                                                         <td><%=rs.getString("NumeroTelefono") %></td>
                                                         <td><%=rs.getString("idUsuario")%></td>
                                                         <td>
-                                                            <a href="Editar.jsp?id=<%=rs.getInt("idPersona")%>" >Editar</a>
+                                                            <a class="btn btn-info" href="Editar.jsp?id=<%=rs.getInt("idPersona")%>" >Editar</a>
                                                         </td>
                                                         <td>
-                                                            <a href="Eliminar.jsp?id=<%=rs.getInt("idPersona")%>">Eliminar</a>
+                                                            <a class="btn btn-secondary" href="Eliminar.jsp?id=<%=rs.getInt("idPersona")%>">Eliminar</a>
                                                         </td>
                                                     </tr>
                                                     <%}%>
@@ -280,45 +279,45 @@
 
 											%>
 											<div>
-											<h1>Tabla Alumnos</h1>
-											<table>
-    											<tr>
-    												<th>idPersona</th>
-    												<th>idTipo</th>
-    												<th>Nombre</th>
-    												<th>Apellido</th>
-    												<th>DNI</th>
-    												<th>Ubigeo</th>
-    												<th>Direccion</th>
-    												<th>Fec. Nac.</th>
-    												<th>Sexo</th>
-    												<th>Num. cel</th>
-    												<th>Num. tel</th>
-    												<th>idUsuario</th>
-    											</tr>
-											<%
-												while(rs2.next()){
-											%>
-    											<tr>
-    												<td><%=rs2.getInt("idPersona")%></td>
-    												<td><%=rs2.getString("idTipo") %></td>
-    												<td><%=rs2.getString("Nombre") %></td>
-    												<td><%=rs2.getString("Apellido") %></td>
-    												<td><%=rs2.getString("DNI") %></td>
-    												<td><%=rs2.getString("idUBIGEO") %></td>
-    												<td><%=rs2.getString("Direccion") %></td>
-    												<td><%=rs2.getDate("fecNac") %></td>
-    												<td><%=rs2.getString("Sexo") %></td>
-    												<td><%=rs2.getString("NumeroCelular") %></td>
-    												<td><%=rs2.getString("NumeroTelefono") %></td>
-    												<td><%=rs2.getString("idUsuario")%></td>
-    												<td>
-    													<a href="Editar.jsp?id=<%=rs2.getInt("idPersona")%>" >Editar</a>
-    													<a href="Eliminar.jsp?id=<%=rs2.getInt("idPersona")%>">Eliminar</a>
-    												</td>
-    											</tr>
-											<%}%>
-											</table>
+
+    											<table>
+        											<tr>
+        												<th>idPersona</th>
+        												<th>idTipo</th>
+        												<th>Nombre</th>
+        												<th>Apellido</th>
+        												<th>DNI</th>
+        												<th>Ubigeo</th>
+        												<th>Direccion</th>
+        												<th>Fec. Nac.</th>
+        												<th>Sexo</th>
+        												<th>Num. cel</th>
+        												<th>Num. tel</th>
+        												<th>idUsuario</th>
+        											</tr>
+    											<%
+    												while(rs2.next()){
+    											%>
+        											<tr>
+        												<td><%=rs2.getInt("idPersona")%></td>
+        												<td><%=rs2.getString("idTipo") %></td>
+        												<td><%=rs2.getString("Nombre") %></td>
+        												<td><%=rs2.getString("Apellido") %></td>
+        												<td><%=rs2.getString("DNI") %></td>
+        												<td><%=rs2.getString("idUBIGEO") %></td>
+        												<td><%=rs2.getString("Direccion") %></td>
+        												<td><%=rs2.getDate("fecNac") %></td>
+        												<td><%=rs2.getString("Sexo") %></td>
+        												<td><%=rs2.getString("NumeroCelular") %></td>
+        												<td><%=rs2.getString("NumeroTelefono") %></td>
+        												<td><%=rs2.getString("idUsuario")%></td>
+        												<td>
+        													<a href="Editar.jsp?id=<%=rs2.getInt("idPersona")%>" >Editar</a>
+        													<a href="Eliminar.jsp?id=<%=rs2.getInt("idPersona")%>">Eliminar</a>
+        												</td>
+        											</tr>
+    											<%}%>
+    											</table>
 											</div>
                                       </div>
                                     </div>
