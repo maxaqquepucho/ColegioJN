@@ -27,7 +27,7 @@
                                    <img src="images/jn-logo.png" alt="" width="38px" height="38px">
                                </div>
                            </a>
-                           <a class="simple" href="#">JESÃšS DE NAZARETH</a>
+                           <a class="simple" href="menu.jsp">JESÚS DE NAZARETH</a>
                        </div>
                        <hr>
                        <div class="menu-sidebar">
@@ -57,10 +57,10 @@
                                    </a>
                                </li>
                                <li>
-                                   <a class="lista-boton"  href="#">
+                                   <a class="lista-boton"  href="login.jsp">
                                        <div class="">
                                            <i class="fas fa-folder-open"></i>
-                                           <p>Nosotros</p>
+                                           <p>Cerrar Sesión</p>
                                        </div>
                                    </a>
                                </li>
@@ -117,23 +117,23 @@
 
                                <div class="col-4 align-self-end">
                                    <img class=""  src=<%=con.imagenes(admin) %> width="150" height="170" style="magin:20px; border-radius: 5px;-webkit-box-shadow: 6px 5px 16px 4px rgba(0,0,0,0.39);
--moz-box-shadow: 6px 5px 16px 4px rgba(0,0,0,0.39);
-box-shadow: 6px 5px 16px 4px rgba(0,0,0,0.39);" >
+									-moz-box-shadow: 6px 5px 16px 4px rgba(0,0,0,0.39);
+									box-shadow: 6px 5px 16px 4px rgba(0,0,0,0.39);" >
 
                                </div>
                                <div class="col-4">
-                                   <input class="form-control mt-2  " type="text" value=<%=con.Nombre(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.Apellido(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.DNI(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.Direccion(admin) %> aria-label="Search">
+                                   <input class="form-control mt-2  " type="text" value="<%=con.Nombre(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.Apellido(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.DNI(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.Direccion(admin) %>" aria-label="Search">
 
                                </div>
 
                                <div class="col-4">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.Sexo(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.NumeroCelular(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.NumeroTelefono(admin) %> aria-label="Search">
-                                   <input class="form-control mt-2 " type="text" value=<%=con.mail(admin) %> aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.Sexo(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.NumeroCelular(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.NumeroTelefono(admin) %>" aria-label="Search">
+                                   <input class="form-control mt-2 " type="text" value="<%=con.mail(admin) %>" aria-label="Search">
 
                                </div>
                            </div>
