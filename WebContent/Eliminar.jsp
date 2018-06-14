@@ -7,6 +7,32 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@page import="com.mysql.jdbc.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Date"%>
 
+<%
+ Connection con;
+ String user="root";
+ String password="";
+ String url="jdbc:mysql://localhost:3306/colegio";
+ String Classname="org.gjt.mm.mysql.Driver";
+ 
+ Class.forName(Classname);
+ con=(Connection) DriverManager.getConnection(url, user, password);
+ 
+ PreparedStatement ps;
+ int id=Integer.parseInt(request.getParameter("id"));
+ ps=con.prepareStatement("DELETE from colegio.persona where idPersona = "+id);
+ ps.executeUpdate();
+ 
+ PreparedStatement ps2;
+ int id2=Integer.parseInt(request.getParameter("id"));
+ ps2=con.prepareStatement("DELETE from colegio.usuario where idUsuario = "+id);
+ ps2.executeUpdate();
+ response.sendRedirect("menu-director.jsp");
+%>
 </body>
 </html>
