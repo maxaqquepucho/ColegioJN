@@ -38,7 +38,7 @@
 
              <div class=" container-login col-12-md-12  ">
 
-                 <form class="formulario " action="iniciarSesion" method="post">
+                 <form class="formulario" action="iniciarSesion" method="post">
                      <div >
                          <div class="input-2">
                              <img src="images/jn-login3.png" alt="" width="50" height="50">

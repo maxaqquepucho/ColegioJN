@@ -35,17 +35,17 @@ public class iniciarSesion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
+		System.out.println("werwd working");
 			String usuario= request.getParameter("user");
 			String password=request.getParameter("pass");
 			Login log = new Login();
 			beanUser BeanUser = new beanUser();
 			BeanUser.setUsuario(request.getParameter("user"));
 			request.setAttribute("beanUser", BeanUser);
+			
 
 			if(log.autenticacion(usuario, password))
 			{
-				
 				request.getRequestDispatcher("menu.jsp").forward(request, response);
 				
 
