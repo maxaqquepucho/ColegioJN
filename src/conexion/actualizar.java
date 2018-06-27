@@ -49,7 +49,7 @@ public class actualizar extends HttpServlet {
 		 Apellido=request.getParameter("Apellido");
 		 DNI=request.getParameter("DNI");
 		 idUBIGEO=request.getParameter("idUBIGEO");
-		 Direccion=request.getParameter("idUBIGEO");
+		 Direccion=request.getParameter("Direccion");
 		 Date fecnac=Date.valueOf(request.getParameter("fecNac"));
 		 Sexo=request.getParameter("Sexo");
 		 NumeroCelular=request.getParameter("NumeroCelular");
@@ -64,12 +64,21 @@ public class actualizar extends HttpServlet {
 		 BeanActualizar.setIdUBIGEO(idUBIGEO);
 		 BeanActualizar.setDireccion(Direccion);
 		 BeanActualizar.setFecnac(fecnac);
-		 BeanActualizar.setSexo(Sexo);
+		 
+		 if(Sexo.equalsIgnoreCase("1")) 
+		 {
+		  BeanActualizar.setSexo("M"); 
+		 }else 
+		 {
+	      BeanActualizar.setSexo("F");  
+		 }
+		
 		 BeanActualizar.setNumCel(NumeroCelular);
 		 BeanActualizar.setNumTelf(NumeroTelefono);
 		 
 		 BeanActualizar.mostrar();
 		 BeanActualizar.Actualizar();
+
 	}
 
 }

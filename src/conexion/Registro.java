@@ -91,6 +91,8 @@ public class Registro extends HttpServlet {
 		{
 			response.sendRedirect("Registrar.jsp");
 		}*/
+
+		 response.sendRedirect("http://localhost:8080/ColegioA/login.jsp");
 		
 	}
 

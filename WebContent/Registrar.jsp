@@ -120,7 +120,7 @@
                             </div>
 
                             <div class="button">
-                                <button type="submit">Registrar</button>
+                                <button type="submit" >Registrar</button>
                             </div>
                         </div>
 

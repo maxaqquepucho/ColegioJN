@@ -95,6 +95,7 @@
      <option value="1" <%=Maculino(rs.getString("Sexo")) %>>M</option>
      <option value="2" <%=Femenino(rs.getString("Sexo")) %>>F</option>
     </select>
+    <br><br>
     NumCel: 
 	<input type="text" name="NumeroCelular" value="<%=rs.getString("NumeroCelular") %>">
 	<br><br>
