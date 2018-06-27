@@ -15,6 +15,25 @@ public class Persona
 	String NumeroTelefono;
 	String idUsuario;
 	
+	
+	
+	public Persona(String idPersona, String idTipo, String nombre, String apellido, String dni, String idUBIGEO,
+			String direccion, String fecnac, String sexo, String numeroCelular, String numeroTelefono,
+			String idUsuario) {
+		super();
+		this.idPersona = idPersona;
+		this.idTipo = idTipo;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.idUBIGEO = idUBIGEO;
+		this.direccion = direccion;
+		this.fecnac = fecnac;
+		this.sexo = sexo;
+		NumeroCelular = numeroCelular;
+		NumeroTelefono = numeroTelefono;
+		this.idUsuario = idUsuario;
+	}
 	public String getIdPersona() {
 		return idPersona;
 	}
