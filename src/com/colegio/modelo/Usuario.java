@@ -21,6 +21,9 @@ public class Usuario extends Persona
 		this.pass = pass;
 		this.imagen = imagen;
 	}
+	public Usuario()
+	{
+	}
 
 
 	public String getMail() {
