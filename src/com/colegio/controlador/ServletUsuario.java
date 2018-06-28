@@ -1,6 +1,9 @@
 package com.colegio.controlador;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.colegio.interfaz.UsuarioInterfaz;
+import com.colegio.modelo.Persona;
 import com.colegio.modelo.Usuario;
 import com.colegio.mysql.UsuarioSQL;
 
@@ -35,9 +39,34 @@ public class ServletUsuario extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		
-		UsuarioInterfaz persona = new UsuarioSQL(); 
+		UsuarioInterfaz user = new UsuarioSQL(); 
 		
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
+		
+		if (usuario != null) {
+		
+		try {
+				List<Usuario> lista = user.mostrar();
+				if (lista != null) {
+					request.setAttribute("lista", lista);
+					System.out.println("La lista no es null");
+				} else {
+					System.out.println("No Existe ninguna lita o probablemente hay un error");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				System.out.println("Se realizo correctamente en envio del listado de persona - ServletPersona");
+			}
+			
+			RequestDispatcher despachador = request.getRequestDispatcher("TablaPersona.jsp");
+		despachador.forward(request, response);
+			System.out.println("Llegaste con exito al ServletPersona");
+	}else {
+		RequestDispatcher despachador = request.getRequestDispatcher("error.jsp");
+		despachador.forward(request, response);
+	}
+		
 	}
 
 	/**
