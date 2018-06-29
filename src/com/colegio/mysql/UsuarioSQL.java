@@ -101,9 +101,6 @@ public class UsuarioSQL implements UsuarioInterfaz
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
-		}finally {
-			System.out.println("Se Agrego con Exito - @Override\r\n" + 
-					"	public boolean agregar");
 		}
 	}
 	
