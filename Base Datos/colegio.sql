@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-06-2018 a las 05:26:00
+-- Tiempo de generación: 30-06-2018 a las 08:44:55
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -132,7 +132,7 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`idPersona`, `idTipo`, `Nombre`, `Apellido`, `DNI`, `idUBIGEO`, `Direccion`, `fecNac`, `Sexo`, `NumeroCelular`, `NumeroTelefono`) VALUES
-(1, 2, 'Percy', 'Avalos Urcia', '70334345', NULL, 'null', '1996-07-15', '1', '996007268', '7940481'),
+(1, 2, 'Percy', 'Avalos Urcia', '70334345', NULL, 'null', '1996-07-15', 'M', '996007268', '7940481'),
 (3, 2, 'Oscar', 'Bravo Carbajal', '73260012', NULL, 'Jr. Los andes 187', '1999-02-25', 'M', '956727151', '7894561'),
 (4, 2, 'Diego', 'Marcelo Castro', '46924971', NULL, 'Residencias heroes', '1990-02-25', 'M', '991049184', '7894561'),
 (5, 2, 'Stacey', 'Camino Ingroca', '77675721', NULL, 'Residencias heroes', '1998-07-16', 'F', '940451864', '7894561'),
