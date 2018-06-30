@@ -24,7 +24,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 	public ArrayList<Usuario> mostrar() {
 		// TODO Auto-generated method stub
 		ArrayList<Usuario> lista = new ArrayList<Usuario>();
-		SQL = "SELECT * FROM colegio.usuario A inner join colegio.persona B ON (a.idUsuario=b.idPersona) where idTipo=1";
+		SQL = "SELECT * FROM colegio.usuario A inner join colegio.persona B ON (a.idUsuario=b.idPersona)";
 		mysql.establecerConexion();
 		Connection conectado = mysql.getConnection();
 		int i=0;
@@ -55,6 +55,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 				System.out.println(lista.get(i).getIdPersona());
 				System.out.println(lista.get(i).getNombre());
 				System.out.println(lista.get(i).getApellido());
+				System.out.println(lista.get(i).getSexo());
 				System.out.println(rs.getString("Nombre"));
 				i++;
 			}
