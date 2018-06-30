@@ -65,12 +65,6 @@ public class Usuario extends Persona
 		this.imagen = imagen;
 	}
 	
-	public void mostrar() 
-	{
-		System.out.println(getMail());
-	}
-	
-	
 	
 	
 	

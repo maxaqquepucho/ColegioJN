@@ -27,34 +27,36 @@ public class UsuarioSQL implements UsuarioInterfaz
 		SQL = "SELECT * FROM colegio.usuario A inner join colegio.persona B ON (a.idUsuario=b.idPersona) where idTipo=1";
 		mysql.establecerConexion();
 		Connection conectado = mysql.getConnection();
-		
+		int i=0;
 		
 		try {
 			PreparedStatement ps = conectado.prepareStatement(SQL);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Usuario usuario = new Usuario();
-				usuario.setIdPersona("idPersona");
-				usuario.setIdTipo("idTipo");
-				usuario.setNombre("Nombre");
-				usuario.setApellido("Apellido");
-				usuario.setDni("DNI");
-				usuario.setIdUBIGEO("idUBIGEO");
-				usuario.setDireccion("Direccion");
-				usuario.setFecnac("fecnac");
-				usuario.setSexo("Sexo");
-				usuario.setNumeroCelular("NumeroCelular");
-				usuario.setNumeroTelefono("NumeroTelefono");
-				usuario.setIdUsuario("idusuario");
-				usuario.setMail("mail");
-				usuario.setUsuario("usuario");
-				usuario.setPass("contrasenia");
-				usuario.setImagen("imagen");
+				usuario.setIdPersona(rs.getString("idPersona"));
+				usuario.setIdTipo(rs.getString("idTipo"));
+				usuario.setNombre(rs.getString("Nombre"));
+				usuario.setApellido(rs.getString("Apellido"));
+				usuario.setDni(rs.getString("DNI"));
+				usuario.setIdUBIGEO(rs.getString("idUBIGEO"));
+				usuario.setDireccion(rs.getString("Direccion"));
+				usuario.setFecnac(rs.getString("fecnac"));
+				usuario.setSexo(rs.getString("Sexo"));
+				usuario.setNumeroCelular(rs.getString("NumeroCelular"));
+				usuario.setNumeroTelefono(rs.getString("NumeroTelefono"));
+				usuario.setIdUsuario(rs.getString("idusuario"));
+				usuario.setMail(rs.getString("mail"));
+				usuario.setUsuario(rs.getString("usuario"));
+				usuario.setPass(rs.getString("contrasenia"));
+				usuario.setImagen(rs.getString("imagen"));
 				lista.add(usuario);
 				
-				System.out.println(lista.toString());
+				System.out.println(lista.get(i).getIdPersona());
+				System.out.println(lista.get(i).getNombre());
+				System.out.println(lista.get(i).getApellido());
 				System.out.println(rs.getString("Nombre"));
-				
+				i++;
 			}
 			
 			return lista;
