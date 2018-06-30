@@ -37,22 +37,22 @@ public class ServletUsuario extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
+		//HttpSession session = request.getSession();
 		
 		UsuarioInterfaz user = new UsuarioSQL(); 
 		
-		Usuario usuario = (Usuario) session.getAttribute("usuario");
+		//Usuario usuario = (Usuario) session.getAttribute("usuario");
 		
-		if (usuario != null) {
+		if (true) {
 		
 		try {
 				List<Usuario> lista = user.mostrar();
-//				if (lista != null) {
-//					request.setAttribute("lista", lista);
-//					System.out.println("La lista no es null");
-//				} else {
-//					System.out.println("No Existe ninguna lita o probablemente hay un error");
-//				}
+				if (lista != null) {
+					request.setAttribute("lista", lista);
+					System.out.println("La lista no es null");
+				} else {
+				System.out.println("No Existe ninguna lita o probablemente hay un error");
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally {
