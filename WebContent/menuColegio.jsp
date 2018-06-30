@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="es" >
     <head>
@@ -47,15 +49,24 @@
                 <div class=" mt-3 d-flex flex-wrap fle-row justify-content-around" style="width: 98%;">
                     <div class="" style="width: 70%; ">
                         <div class="col-12" >
-                        <table class="table table-hover table-dark">
+                        <table class="table table-hover table-dark table-responsive">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                    <th scope="col">Botton 1</th>
-                                    <th scope="col">Botton 2</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">Usuario</th>
+                                    <th scope="col">Password</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">DNI</th>
+                                    <th scope="col">Sexo</th>
+                                    <th scope="col">Direccion</th>
+                                    <th scope="col">link</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Celular</th>
+                                    <th scope="col">Telefono</th>
+                                    <th scope="col">Accion 1</th>
+                                    <th scope="col">Accion 2</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,18 +75,6 @@
                                     <td>Mark</td>
                                     <td>Otto</td>
                                     <td>@mdo</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary">Editar</a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-info">Eliminar</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
                                     <td>
                                         <a href="#" class="btn btn-primary">Editar</a>
                                     </td>
