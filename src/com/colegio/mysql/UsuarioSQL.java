@@ -24,7 +24,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 	public ArrayList<Usuario> mostrar() {
 		// TODO Auto-generated method stub
 		ArrayList<Usuario> lista = new ArrayList<Usuario>();
-		SQL = "SELECT * FROM colegio.usuario A inner join colegio.persona B ON (a.idUsuario=b.idPersona) where idTipo=1";
+		SQL = "SELECT * FROM colegio.usuario A inner join colegio.persona B ON (a.idUsuario=b.idPersona) ";
 		mysql.establecerConexion();
 		Connection conectado = mysql.getConnection();
 		int i=0;

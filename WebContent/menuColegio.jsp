@@ -72,7 +72,7 @@
                             <tbody>
                                 <c:forEach var="n" items="${lista}" >
                                     <tr>
-                                        <td scope="row">${n.idPersona}</td>
+                                        <td scope="row"><c:out value = "${n.idPersona}"/></td>
                                         <td>${n.nombre}</td>
                                         <td>${n.apellido}</td>
                                         <td>${n.usuario}</td>
