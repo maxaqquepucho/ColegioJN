@@ -52,7 +52,7 @@
                         <table class="table table-hover table-dark table-responsive">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">ID</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Apellido</th>
                                     <th scope="col">Usuario</th>
@@ -70,18 +70,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary">Editar</a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-info">Eliminar</a>
-                                    </td>
-                                </tr>
+                                <c:forEach var="n" items="${lista}" >
+                                    <tr>
+                                        <td scope="row">${n.idPersona}</td>
+                                        <td>${n.nombre}</td>
+                                        <td>${n.apellido}</td>
+                                        <td>${n.usuario}</td>
+                                        <td>${n.pass}</td>
+                                        <td>${n.mail}</td>
+                                        <td>${n.dni}</td>
+                                        <td>${n.sexo}</td>
+                                        <td>${n.direccion}</td>
+                                        <td>${n.imagen}</td>
+                                        <td>${n.fecnac}</td>
+                                        <td>${n.numeroCelular}</td>
+                                        <td>${n.numeroTelefono}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-primary">Editar</a>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-info">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
