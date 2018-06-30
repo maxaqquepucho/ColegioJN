@@ -51,12 +51,6 @@ public class UsuarioSQL implements UsuarioInterfaz
 				usuario.setPass(rs.getString("contrasenia"));
 				usuario.setImagen(rs.getString("imagen"));
 				lista.add(usuario);
-				
-				System.out.println(lista.get(i).getIdPersona());
-				System.out.println(lista.get(i).getNombre());
-				System.out.println(lista.get(i).getApellido());
-				System.out.println(rs.getString("Nombre"));
-				i++;
 			}
 			
 			return lista;
