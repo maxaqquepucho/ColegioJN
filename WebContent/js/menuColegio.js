@@ -51,14 +51,16 @@ function onError(){
         mail = document.getElementById('mail'),
         usuario = document.getElementById('usuario'),
         pass = document.getElementById('pass'),
-        imagen = document.getElementById('imagen');
+        imagen = document.getElementById('imagen'),
+        tipo = document.getElementById('tipo');
 
 
  btnAgregar.addEventListener('click', agregarEditarFila);
 
  function agregarEditarFila() {
      let datos = {
-         idUsuario: idUsuario.value,
+         accion: btnAgregar.value,
+         idPersona: idUsuario.value,
          nombre: nombre.value,
          apellido: apellido.value,
          dni: dni.value,
@@ -70,7 +72,8 @@ function onError(){
          mail: mail.value,
          usuario: usuario.value,
          pass: pass.value,
-         imagen: imagen.value
+         imagen: imagen.value,
+         tipo: tipo.value
      }
      ws.send(JSON.stringify(datos));
      console.log(datos);

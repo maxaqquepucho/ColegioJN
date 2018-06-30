@@ -67,8 +67,8 @@ public class UsuarioSQL implements UsuarioInterfaz
 	{
 		SQL = "INSERT INTO persona (idTipo, Nombre, Apellido, DNI, idUBIGEO, Direccion, fecNac, Sexo, NumeroCelular, NumeroTelefono) " + 
 				"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-		String SQL2 = "INSERT INTO usuario (mail, usuario, contrasenia, imagen) " + 
-				"            VALUES (?, ?, ?, ?);";
+		String SQL2 = "INSERT INTO usuario (idUsuario, mail, usuario, contrasenia, imagen) " + 
+				"            VALUES ((select max(idPersona) from persona), ?, ?, ?, ?);";
 		mysql.establecerConexion();
 		Connection conectado = mysql.getConnection();
 		
@@ -85,6 +85,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 			pst.setString(8, usuario.getSexo());
 			pst.setString(9, usuario.getNumeroCelular());
 			pst.setString(10, usuario.getNumeroTelefono());
+			
 			pst2.setString(1, usuario.getMail());
 			pst2.setString(2, usuario.getUsuario());
 			pst2.setString(3, usuario.getPass());
@@ -92,9 +93,14 @@ public class UsuarioSQL implements UsuarioInterfaz
 			
 			
 			int n = pst.executeUpdate();
-			mysql.cerrarConexion();
+			
 			if (n != 0) {
-				return true;
+				if (pst2.executeUpdate() != 0) {
+					mysql.cerrarConexion();
+					return true;
+				} else {
+					return false;
+				}
 			} else {
 				return false;
 			}

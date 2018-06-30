@@ -65,6 +65,7 @@
                                     <th scope="col">Fecha</th>
                                     <th scope="col">Celular</th>
                                     <th scope="col">Telefono</th>
+                                    <th scope="col">Tipo</th>
                                     <th scope="col">Accion 1</th>
                                     <th scope="col">Accion 2</th>
                                 </tr>
@@ -72,7 +73,7 @@
                             <tbody>
                                 <c:forEach var="n" items="${lista}" >
                                     <tr>
-                                        <td scope="row"><c:out value = "${n.idPersona}"/></td>
+                                        <td scope="row"> ${n.idPersona}</td>
                                         <td>${n.nombre}</td>
                                         <td>${n.apellido}</td>
                                         <td>${n.usuario}</td>
@@ -85,6 +86,7 @@
                                         <td>${n.fecnac}</td>
                                         <td>${n.numeroCelular}</td>
                                         <td>${n.numeroTelefono}</td>
+                                        <td>${n.idTipo}</td>
                                         <td>
                                             <a href="#" class="btn btn-primary">Editar</a>
                                         </td>
@@ -123,6 +125,15 @@
                                 <label for="inputAddress2">Apellidos</label>
                                 <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellidos">
                             </div>
+                            <div class="form-group ">
+                                <label for="inputState">Tipo</label>
+                                <select id="tipo" class="form-control">
+                                    <option selected>1</option>
+                                    <option>2</option>
+                                    <option selected>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputCity">DNI</label>
@@ -131,8 +142,8 @@
                                 <div class="form-group col-md-4">
                                     <label for="inputState">Sexo</label>
                                     <select id="sexo" class="form-control">
-                                        <option selected>Masculino</option>
-                                        <option>Femenina</option>
+                                        <option selected>M</option>
+                                        <option>F</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-2">
@@ -162,7 +173,7 @@
                                     <input type="text" class="form-control" id="telefono" placeholder="Telefono">
                                 </div>
                             </div>
-                            <button id="btnAgregar" type="button" class="btn btn-primary">Agregar</button>
+                            <input id="btnAgregar" type="button" class="btn btn-primary" value="Agregar" input>
                             <button type="reset" class="btn btn-primary">Cancelar</button>
                         </form>
                     </div>
