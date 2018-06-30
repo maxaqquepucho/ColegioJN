@@ -47,19 +47,19 @@ public class ServletUsuario extends HttpServlet {
 		
 		try {
 				List<Usuario> lista = user.mostrar();
-				if (lista != null) {
-					request.setAttribute("lista", lista);
-					System.out.println("La lista no es null");
-				} else {
-					System.out.println("No Existe ninguna lita o probablemente hay un error");
-				}
+//				if (lista != null) {
+//					request.setAttribute("lista", lista);
+//					System.out.println("La lista no es null");
+//				} else {
+//					System.out.println("No Existe ninguna lita o probablemente hay un error");
+//				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally {
 				System.out.println("Se realizo correctamente en envio del listado de persona - ServletPersona");
 			}
 			
-			RequestDispatcher despachador = request.getRequestDispatcher("TablaPersona.jsp");
+			RequestDispatcher despachador = request.getRequestDispatcher("menuColegio.jsp");
 		despachador.forward(request, response);
 			System.out.println("Llegaste con exito al ServletPersona");
 	}else {
