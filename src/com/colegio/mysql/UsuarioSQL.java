@@ -218,6 +218,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 			pst2.setString(1, codigo);
 			
 			int n = pst.executeUpdate();
+			int n2 = pst2.executeUpdate();
 			mysql.cerrarConexion();
 			if (n != 0) {
 				return true;
@@ -236,7 +237,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 		
 		Usuario use= new Usuario();
 		UsuarioSQL uq= new UsuarioSQL();
-	    uq.eliminar("16");
+	    uq.eliminar("18");
 		uq.mostrar();
 	}
 
