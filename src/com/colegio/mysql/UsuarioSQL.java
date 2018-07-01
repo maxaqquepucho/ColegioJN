@@ -51,6 +51,10 @@ public class UsuarioSQL implements UsuarioInterfaz
 				usuario.setPass(rs.getString("contrasenia"));
 				usuario.setImagen(rs.getString("imagen"));
 				lista.add(usuario);
+				
+				System.out.println(lista.get(i).getNombre());
+				i++;
+				
 			}
 			
 			return lista;
@@ -208,8 +212,8 @@ public class UsuarioSQL implements UsuarioInterfaz
 		Connection conectado = mysql.getConnection();
 		
 		try {
-			PreparedStatement  pst = conectado.prepareStatement(SQL);
-			PreparedStatement  pst2 = conectado.prepareStatement(SQL2);
+			PreparedStatement  pst = conectado.prepareStatement(SQL2);
+			PreparedStatement  pst2 = conectado.prepareStatement(SQL);
 			pst.setString(1, codigo);
 			pst2.setString(1, codigo);
 			
@@ -232,6 +236,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 		
 		Usuario use= new Usuario();
 		UsuarioSQL uq= new UsuarioSQL();
+	    uq.eliminar("16");
 		uq.mostrar();
 	}
 
