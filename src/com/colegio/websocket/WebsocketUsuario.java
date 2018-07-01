@@ -54,8 +54,6 @@ public class WebsocketUsuario {
 		String imagen = gson.get("imagen").getAsString();
 		String tipo = gson.get("tipo").getAsString();
 		
-		
-		
 		switch (accion) {
 		case "Agregar":
 			Usuario usuario = new Usuario();
@@ -77,8 +75,14 @@ public class WebsocketUsuario {
 			
 			if (usuarioSQL.agregar(usuario)) {
 				System.out.println("Se agrego exitosamente un usuario: "+ nombre);
+				for(Session session : conectados) {
+					session.getBasicRemote().sendText(mensaje);
+					
+				}
 			} else {
 				System.out.println("arror al agregar");
+				 userSession.getBasicRemote().sendText("{\"accion\":\"alertaAgregar\"}");
+				 
 			}
 			
 			break;

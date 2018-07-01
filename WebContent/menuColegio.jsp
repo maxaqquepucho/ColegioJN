@@ -70,7 +70,7 @@
                                     <th scope="col">Accion 2</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="usuariosColegio">
                                 <c:forEach var="n" items="${lista}" >
                                     <tr>
                                         <td scope="row"> ${n.idPersona}</td>
