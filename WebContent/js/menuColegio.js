@@ -3,8 +3,8 @@ let url = 'ws://localhost:8080/ColegioA/UsuarioWebSocket',
     ws = new WebSocket(url),
  btnAgregar = document.getElementById("btnAgregar");
 
+ let tabla = document.querySelector('#usuariosColegio');
     function numFilas() {
-        let tabla = document.querySelector('#usuariosColegio');
         return  tabla.rows.length;
     }
 
@@ -86,7 +86,7 @@ function onError(){
  }
 
  function mensajeAgregarFila(objeto) {
-     let row tabla.insertRow(numFilas());
+     let row = tabla.insertRow(numFilas());
 
         let cell1 = row.insertCell(0),
             cell2 = row.insertCell(1),
@@ -111,18 +111,17 @@ function onError(){
             cell1.innerHTML = objeto.idPersona;
             cell2.innerHTML = objeto.nombre;
             cell3.innerHTML = objeto.apellido;
-            cell4.innerHTML = objeto.dni;
-            cell5.innerHTML = objeto.direccion;
-            cell6.innerHTML = objeto.fechaNacimiento;
-            cell7.innerHTML = objeto.sexo
-            cell8.innerHTML = objeto.celular;
-            cell9.innerHTML = objeto.telefono;
-            cell10.innerHTML = objeto.mail;
-            cell11.innerHTML = objeto.usuario;
-            cell12.innerHTML = objeto.pass;
-            cell13.innerHTML = objeto.imagen;
+            cell4.innerHTML = objeto.usuario;
+            cell5.innerHTML = objeto.pass;
+            cell6.innerHTML = objeto.mail;
+            cell7.innerHTML = objeto.dni;
+            cell8.innerHTML = objeto.sexo;
+            cell9.innerHTML = objeto.direccion;
+            cell10.innerHTML = objeto.imagen;
+            cell11.innerHTML = objeto.fechaNacimiento;
+            cell12.innerHTML = objeto.celular;
+            cell13.innerHTML = objeto.telefono;
             cell14.innerHTML = objeto.tipo;
             cell15.innerHTML = `<a href="#" class="btn btn-primary">Editar</a>`
             cell16.innerHTML = `<a href="#" class="btn btn-info">Eliminar</a>`
- }
  }
