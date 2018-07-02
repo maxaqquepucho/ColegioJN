@@ -88,10 +88,10 @@
                                         <td>${n.numeroTelefono}</td>
                                         <td>${n.idTipo}</td>
                                         <td>
-                                            <a href="#" class="btn btn-primary">Editar</a>
+                                            <a href="javascript:void(0)" class="btn btn-primary">Editar</a>
                                         </td>
                                         <td>
-                                            <a href="#" class="btn btn-info">Eliminar</a>
+                                            <a href="javascript:void(0)" class="btn btn-info" onclick="eliminarFila(this)">Eliminar</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

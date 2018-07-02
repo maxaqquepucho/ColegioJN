@@ -250,7 +250,13 @@ public class UsuarioSQL implements UsuarioInterfaz
 			int n2 = pst2.executeUpdate();
 			mysql.cerrarConexion();
 			if (n != 0) {
-				return true;
+				System.out.println("Se elimino de la tabla Usuario en el idPersona: "+codigo);
+				if (n2 != 0) {
+					System.out.println("Se elimino de la tabla Persona en el idPersona: "+codigo);
+					return true;
+				} else {
+					return false;
+				}
 			} else {
 				return false;
 			}

@@ -40,23 +40,24 @@ public class WebsocketUsuario {
 		UsuarioInterfaz usuarioSQL = new UsuarioSQL();
 		
 		String idPersona = gson.get("idPersona").getAsString();
-		String nombre = gson.get("nombre").getAsString();
-		String apellido = gson.get("apellido").getAsString();
-		String dni = gson.get("dni").getAsString();
-		String direccion = gson.get("direccion").getAsString();
-		String fechaNacimiento = gson.get("fechaNacimiento").getAsString();
-		String sexo = gson.get("sexo").getAsString();
-		String celular = gson.get("celular").getAsString();
-		String telefono = gson.get("telefono").getAsString();
-		String mail = gson.get("mail").getAsString();
-		String user = gson.get("usuario").getAsString();
-		String pass = gson.get("pass").getAsString();
-		String imagen = gson.get("imagen").getAsString();
-		String tipo = gson.get("tipo").getAsString();
+		
 		
 		switch (accion) {
 		case "Agregar":
 			Usuario usuario = new Usuario();
+			String nombre = gson.get("nombre").getAsString();
+			String apellido = gson.get("apellido").getAsString();
+			String dni = gson.get("dni").getAsString();
+			String direccion = gson.get("direccion").getAsString();
+			String fechaNacimiento = gson.get("fechaNacimiento").getAsString();
+			String sexo = gson.get("sexo").getAsString();
+			String celular = gson.get("celular").getAsString();
+			String telefono = gson.get("telefono").getAsString();
+			String mail = gson.get("mail").getAsString();
+			String user = gson.get("usuario").getAsString();
+			String pass = gson.get("pass").getAsString();
+			String imagen = gson.get("imagen").getAsString();
+			String tipo = gson.get("tipo").getAsString();
 			
 			usuario.setIdTipo(tipo);
 			usuario.setNombre(nombre);
@@ -84,9 +85,21 @@ public class WebsocketUsuario {
 				 userSession.getBasicRemote().sendText("{\"accion\":\"alertaAgregar\"}");
 				 
 			}
-			
 			break;
-
+		case "Eliminar":
+				idPersona = gson.get("idPersona").getAsString();
+				/*usuario = new Usuario();
+				usuario.setIdPersona(idPersona);*/
+				if (usuarioSQL.eliminar(idPersona)) {
+					System.out.println("Se elimino un usuario satisfactoriamente: "+idPersona);
+					for(Session session : conectados) {
+						session.getBasicRemote().sendText(mensaje);
+					}
+				} else {
+					System.out.println("arror al Eliminar");
+					userSession.getBasicRemote().sendText("{\"accion\":\"alertaEliminar\"}");
+				}
+			break;
 		default: System.out.println("No existe esta opcion");
 			break;
 		}

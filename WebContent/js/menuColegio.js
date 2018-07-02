@@ -59,7 +59,6 @@ function onError(){
         imagen = document.getElementById('imagen'),
         tipo = document.getElementById('tipo');
 
-
  btnAgregar.addEventListener('click', agregarEditarFila);
 
  function ultimoIDFila(){
@@ -128,6 +127,26 @@ function onError(){
             cell12.innerHTML = objeto.celular;
             cell13.innerHTML = objeto.telefono;
             cell14.innerHTML = objeto.tipo;
-            cell15.innerHTML = `<a href="#" class="btn btn-primary">Editar</a>`
-            cell16.innerHTML = `<a href="#" class="btn btn-info">Eliminar</a>`
+            cell15.innerHTML = `<a href="javascript:void(0)" class="btn btn-primary">Editar</a>`
+            cell16.innerHTML = `<a href="javascript:void(0)" class="btn btn-info" onclick="eliminarFila(this)">Eliminar</a>`
+ }
+
+ function eliminarFila(t){
+     let td = t.parentNode;
+     let tr = td.parentNode;
+     var table = tr.parentNode;
+
+     let datos = {
+         accion: 'Eliminar',
+         idPersona: tr.children[0].textContent,
+         indiceFila: tr.sectionRowIndex
+     };
+
+     ws.send(JSON.stringify(datos));
+ }
+
+ function mensajeEliminarFila(objeto) {
+     let tablaPersona = document.querySelector('#usuariosColegio');
+     tablaPersona.children[objeto.indiceFila].remove();
+     console.log('Se elimino la fila: '+objeto.indiceFila);
  }
