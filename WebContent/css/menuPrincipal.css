@@ -213,3 +213,7 @@ box-shadow: 0px 0px 2px 1px rgba(255,255,255,1);
     background: rgb(173, 173, 173);
     border-radius: 50%;
 }
+
+#tablaMenuColegio {
+    max-height: 800px;
+}

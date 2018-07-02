@@ -49,7 +49,7 @@
                 <div class=" mt-3 d-flex flex-wrap fle-row justify-content-around" style="width: 98%;">
                     <div class="" style="width: 70%; ">
                         <div class="col-12" >
-                        <table class="table table-hover table-dark table-responsive">
+                        <table class="table table-hover table-dark table-responsive " id="tablaMenuColegio">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>

@@ -62,10 +62,16 @@ function onError(){
 
  btnAgregar.addEventListener('click', agregarEditarFila);
 
+ function ultimoIDFila(){
+     const usuariosColegio = document.querySelector('#usuariosColegio');
+     let lastID = parseInt(usuariosColegio.lastElementChild.firstElementChild.textContent);
+     return lastID+1;
+ }
+
  function agregarEditarFila() {
      let datos = {
          accion: btnAgregar.value,
-         idPersona: idUsuario.value,
+         idPersona: ultimoIDFila(),
          nombre: nombre.value,
          apellido: apellido.value,
          dni: dni.value,
