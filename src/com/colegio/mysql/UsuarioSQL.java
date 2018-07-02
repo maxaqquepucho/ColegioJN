@@ -98,13 +98,13 @@ public class UsuarioSQL implements UsuarioInterfaz
 		SQL = "INSERT INTO persona (idPersona, idTipo, Nombre, Apellido, DNI, idUBIGEO, Direccion, fecNac, Sexo, NumeroCelular, NumeroTelefono) " + 
 				"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 		String SQL2 = "INSERT INTO usuario (idUsuario, mail, usuario, contrasenia, imagen) " + 
-				"            VALUES (?, ?, ?, ?, ?);";
+				"            VALUES ((select max(idPersona) from persona), ?, ?, ?, ?);";
 		mysql.establecerConexion();
 		Connection conectado = mysql.getConnection();
 		
 		try {
 			PreparedStatement pst = conectado.prepareStatement(SQL);
-			PreparedStatement pst2 = conectado.prepareStatement(SQL2);
+			
 			pst.setInt(1, maxiduser());
 			pst.setString(2, usuario.getIdTipo());
 			pst.setString(3, usuario.getNombre());
@@ -117,11 +117,12 @@ public class UsuarioSQL implements UsuarioInterfaz
 			pst.setString(10, usuario.getNumeroCelular());
 			pst.setString(11, usuario.getNumeroTelefono());
 			
-			pst2.setInt(1,maxiduser() );
-			pst2.setString(2, usuario.getMail());
-			pst2.setString(3, usuario.getUsuario());
-			pst2.setString(4, usuario.getPass());
-			pst2.setString(5, usuario.getImagen());
+			PreparedStatement pst2 = conectado.prepareStatement(SQL2);
+			
+			pst2.setString(1, usuario.getMail());
+			pst2.setString(2, usuario.getUsuario());
+			pst2.setString(3, usuario.getPass());
+			pst2.setString(4, usuario.getImagen());
 			
 			
 			int n = pst.executeUpdate();
