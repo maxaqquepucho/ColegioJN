@@ -65,7 +65,33 @@ public class UsuarioSQL implements UsuarioInterfaz
 		}
 		return null;
 	}
+	
+	public int maxiduser()
+	{
+		ResultSet rs = null;
+		String sql="SELECT MAX(idPersona) FROM colegio.persona";
+		mysql.establecerConexion();
+		Connection conectado = mysql.getConnection();
 
+		try
+		{
+			PreparedStatement ps=conectado.prepareStatement(sql);
+			rs=ps.executeQuery();
+			int cadena=0;
+
+			while(rs.next())
+			{
+				cadena=rs.getInt("MAX(idPersona)");
+				System.out.println(cadena);
+			}
+			
+			return cadena;
+
+
+		} catch (Exception e) {e.printStackTrace();}
+		return  0;
+	}
+	
 	@Override
 	public boolean agregar(Usuario usuario) 
 	{
@@ -237,8 +263,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 		
 		Usuario use= new Usuario();
 		UsuarioSQL uq= new UsuarioSQL();
-	    uq.eliminar("18");
-		uq.mostrar();
+	    uq.maxiduser();
 	}
 
 }
