@@ -65,12 +65,38 @@ public class UsuarioSQL implements UsuarioInterfaz
 		}
 		return null;
 	}
+	
+	public int maxiduser()
+	{
+		ResultSet rs = null;
+		String sql="SELECT MAX(idPersona) FROM colegio.persona";
+		mysql.establecerConexion();
+		Connection conectado = mysql.getConnection();
 
+		try
+		{
+			PreparedStatement ps=conectado.prepareStatement(sql);
+			rs=ps.executeQuery();
+			int idmax=0;
+
+			while(rs.next())
+			{
+				idmax=rs.getInt("MAX(idPersona)");
+				System.out.println(idmax+1);
+			}
+			
+			return idmax+1;
+
+
+		} catch (Exception e) {e.printStackTrace();}
+		return  0;
+	}
+	
 	@Override
 	public boolean agregar(Usuario usuario) 
 	{
-		SQL = "INSERT INTO persona (idTipo, Nombre, Apellido, DNI, idUBIGEO, Direccion, fecNac, Sexo, NumeroCelular, NumeroTelefono) " + 
-				"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+		SQL = "INSERT INTO persona (idPersona, idTipo, Nombre, Apellido, DNI, idUBIGEO, Direccion, fecNac, Sexo, NumeroCelular, NumeroTelefono) " + 
+				"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 		String SQL2 = "INSERT INTO usuario (idUsuario, mail, usuario, contrasenia, imagen) " + 
 				"            VALUES ((select max(idPersona) from persona), ?, ?, ?, ?);";
 		mysql.establecerConexion();
@@ -78,17 +104,20 @@ public class UsuarioSQL implements UsuarioInterfaz
 		
 		try {
 			PreparedStatement pst = conectado.prepareStatement(SQL);
+			
+			pst.setInt(1, maxiduser());
+			pst.setString(2, usuario.getIdTipo());
+			pst.setString(3, usuario.getNombre());
+			pst.setString(4, usuario.getApellido());
+			pst.setString(5, usuario.getDni());
+			pst.setString(6, usuario.getIdUBIGEO());
+			pst.setString(7, usuario.getDireccion());
+			pst.setString(8, usuario.getFecnac());
+			pst.setString(9, usuario.getSexo());
+			pst.setString(10, usuario.getNumeroCelular());
+			pst.setString(11, usuario.getNumeroTelefono());
+			
 			PreparedStatement pst2 = conectado.prepareStatement(SQL2);
-			pst.setString(1, usuario.getIdTipo());
-			pst.setString(2, usuario.getNombre());
-			pst.setString(3, usuario.getApellido());
-			pst.setString(4, usuario.getDni());
-			pst.setString(5, usuario.getIdUBIGEO());
-			pst.setString(6, usuario.getDireccion());
-			pst.setString(7, usuario.getFecnac());
-			pst.setString(8, usuario.getSexo());
-			pst.setString(9, usuario.getNumeroCelular());
-			pst.setString(10, usuario.getNumeroTelefono());
 			
 			pst2.setString(1, usuario.getMail());
 			pst2.setString(2, usuario.getUsuario());
@@ -218,6 +247,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 			pst2.setString(1, codigo);
 			
 			int n = pst.executeUpdate();
+			int n2 = pst2.executeUpdate();
 			mysql.cerrarConexion();
 			if (n != 0) {
 				return true;
@@ -236,8 +266,7 @@ public class UsuarioSQL implements UsuarioInterfaz
 		
 		Usuario use= new Usuario();
 		UsuarioSQL uq= new UsuarioSQL();
-	    uq.eliminar("16");
-		uq.mostrar();
+	    uq.maxiduser();
 	}
 
 }
