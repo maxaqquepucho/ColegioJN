@@ -3,6 +3,8 @@ let url = 'ws://localhost:8080/ColegioA/UsuarioWebSocket',
     ws = new WebSocket(url),
  btnAgregar = document.getElementById("btnAgregar");
 
+ /*NO TOCAR ESTA VARIABLE*/  let indiceFilaSelecionaHija = 0;
+
  let tabla = document.querySelector('#usuariosColegio');
     function numFilas() {
         return  tabla.rows.length;
@@ -127,7 +129,7 @@ function onError(){
             cell12.innerHTML = objeto.celular;
             cell13.innerHTML = objeto.telefono;
             cell14.innerHTML = objeto.tipo;
-            cell15.innerHTML = `<a href="javascript:void(0)" class="btn btn-primary">Editar</a>`
+            cell15.innerHTML = `<a href="javascript:void(0)" class="btn btn-primary" onclick="editarFilaRow(this)">Editar</a>`
             cell16.innerHTML = `<a href="javascript:void(0)" class="btn btn-info" onclick="eliminarFila(this)">Eliminar</a>`
  }
 
@@ -143,6 +145,32 @@ function onError(){
      };
 
      ws.send(JSON.stringify(datos));
+ }
+
+
+ function editarFilaRow(t) {
+     let td = t.parentNode;
+     let fila = td.parentNode;
+
+
+    idUsuario.value = fila.children[0].textContent;
+    nombre.value = fila.children[1].textContent;
+    apellido.value = fila.children[2].textContent;
+    usuario.value = fila.children[3].textContent;
+    pass.value = fila.children[4].textContent;
+    mail.value = fila.children[5].textContent;
+    dni.value = fila.children[6].textContent;
+    sexo.value = fila.children[7].textContent;
+    direccion.value = fila.children[8].textContent;
+    imagen.value = fila.children[9].textContent;
+    fechaNacimiento.value = fila.children[10].textContent;
+    celular.value = fila.children[11].textContent;
+    telefono.value = fila.children[12].textContent;
+    tipo.value = fila.children[13].textContent;
+    indiceFilaSelecionaHija = fila.sectionRowIndex;
+    btnAgregar.value = "Editar";
+
+    console.log(indiceFilaSelecionaHija);
  }
 
  function mensajeEliminarFila(objeto) {

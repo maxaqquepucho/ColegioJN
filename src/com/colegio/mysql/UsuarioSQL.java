@@ -266,13 +266,13 @@ public class UsuarioSQL implements UsuarioInterfaz
 		}
 	}
 	
-	public static void main (String [] arg)
+	/*public static void main (String [] arg)
 	
 	{
 		
 		Usuario use= new Usuario();
 		UsuarioSQL uq= new UsuarioSQL();
 	    uq.maxiduser();
-	}
+	}*/
 
 }
