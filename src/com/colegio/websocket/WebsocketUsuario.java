@@ -100,6 +100,51 @@ public class WebsocketUsuario {
 					userSession.getBasicRemote().sendText("{\"accion\":\"alertaEliminar\"}");
 				}
 			break;
+		case "Editar":
+			
+				 usuario = new Usuario();
+				 idPersona = gson.get("idPersona").getAsString();
+				 nombre = gson.get("nombre").getAsString();
+				 apellido = gson.get("apellido").getAsString();
+				 dni = gson.get("dni").getAsString();
+				 direccion = gson.get("direccion").getAsString();
+				 fechaNacimiento = gson.get("fechaNacimiento").getAsString();
+				 sexo = gson.get("sexo").getAsString();
+				 celular = gson.get("celular").getAsString();
+				 telefono = gson.get("telefono").getAsString();
+				 mail = gson.get("mail").getAsString();
+				 user = gson.get("usuario").getAsString();
+				 pass = gson.get("pass").getAsString();
+				 imagen = gson.get("imagen").getAsString();
+				 tipo = gson.get("tipo").getAsString();
+				 
+				 	usuario.setIdPersona(idPersona);
+				    usuario.setIdTipo(tipo);
+					usuario.setNombre(nombre);
+					usuario.setApellido(apellido);
+					usuario.setDni(dni);
+					//usuario.setIdUBIGEO();
+					usuario.setDireccion(direccion);
+					usuario.setFecnac(fechaNacimiento);
+					usuario.setSexo(sexo);
+					usuario.setNumeroCelular(celular);
+					usuario.setNumeroTelefono(telefono);
+					usuario.setMail(mail);
+					usuario.setUsuario(user);
+					usuario.setPass(pass);
+					usuario.setImagen(imagen);
+					
+					if (usuarioSQL.actualizar(usuario)) {
+						System.out.println("Se edito un usuario satisfactoriamente:" +user);
+						for(Session session : conectados) {
+							session.getBasicRemote().sendText(mensaje);
+						}
+					} else {
+						System.out.println("arror al Editar");
+						 userSession.getBasicRemote().sendText("{\"accion\":\"alertaEditar\"}");
+					}
+				 
+			break;
 		default: System.out.println("No existe esta opcion");
 			break;
 		}

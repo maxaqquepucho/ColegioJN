@@ -72,7 +72,9 @@ function onError(){
  function agregarEditarFila() {
      let datos = {
          accion: btnAgregar.value,
-         idPersona: ultimoIDFila(),
+         ultimoIDFila: ultimoIDFila(),
+         idFilaRow: indiceFilaSelecionaHija,
+         idPersona: idUsuario.value,
          nombre: nombre.value,
          apellido: apellido.value,
          dni: dni.value,
@@ -115,7 +117,7 @@ function onError(){
             cell1.setAttribute('scope', 'row')
 
 
-            cell1.innerHTML = objeto.idPersona;
+            cell1.innerHTML = objeto.ultimoIDFila;
             cell2.innerHTML = objeto.nombre;
             cell3.innerHTML = objeto.apellido;
             cell4.innerHTML = objeto.usuario;
@@ -131,6 +133,7 @@ function onError(){
             cell14.innerHTML = objeto.tipo;
             cell15.innerHTML = `<a href="javascript:void(0)" class="btn btn-primary" onclick="editarFilaRow(this)">Editar</a>`
             cell16.innerHTML = `<a href="javascript:void(0)" class="btn btn-info" onclick="eliminarFila(this)">Eliminar</a>`
+             limpiarCampos();
  }
 
  function eliminarFila(t){
@@ -177,4 +180,45 @@ function onError(){
      let tablaPersona = document.querySelector('#usuariosColegio');
      tablaPersona.children[objeto.indiceFila].remove();
      console.log('Se elimino la fila: '+objeto.indiceFila);
+ }
+
+ function mensajeEditarFila(objeto) {
+     let tablaPersona = document.querySelector('#usuariosColegio');
+     let fila = tablaPersona.children[objeto.idFilaRow];
+     let celda = fila.getElementsByTagName('td');
+
+     celda[1].innerHTML = objeto.nombre;
+     celda[2].innerHTML = objeto.apellido;
+     celda[3].innerHTML = objeto.usuario;
+     celda[4].innerHTML = objeto.pass;
+     celda[5].innerHTML = objeto.mail;
+     celda[6].innerHTML = objeto.dni;
+     celda[7].innerHTML = objeto.sexo;
+     celda[8].innerHTML = objeto.direccion;
+     celda[9].innerHTML = objeto.imagen;
+     celda[10].innerHTML = objeto.fechaNacimiento;
+     celda[11].innerHTML = objeto.celular;
+     celda[12].innerHTML = objeto.telefono;
+     celda[13].innerHTML = objeto.tipo;
+
+     btnAgregar.value = 'Agregar';
+     limpiarCampos();
+ }
+
+ function limpiarCampos(){
+     idUsuario.value = ''
+     nombre.value = ''
+     apellido.value = ''
+     usuario.value = ''
+     pass.value = ''
+     mail.value = ''
+     dni.value = ''
+     sexo.value = ''
+     direccion.value = ''
+     imagen.value = ''
+     fechaNacimiento.value = ''
+     celular.value = ''
+     telefono.value = ''
+     tipo.value = ''
+     indiceFilaSelecionaHija = 0
  }

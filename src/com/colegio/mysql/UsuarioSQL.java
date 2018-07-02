@@ -190,46 +190,53 @@ public class UsuarioSQL implements UsuarioInterfaz
 	public boolean actualizar(Usuario usuario)
 	{
 		
-			SQL = "UPDATE persona SET idTipo = ?, Nombre = ?, Apellido = ? , DNI = ? , Direccion = ? , fecNac = ?"
-					+ ", Sexo = ? , NumeroCelular = ? , NumeroTelefono = ? " + 
-			"                     WHERE idPersona = ?";
+		SQL = "UPDATE persona SET idTipo = ?, Nombre = ?, Apellido = ? , DNI = ? , Direccion = ? , fecNac = ?"
+				+ ", Sexo = ? , NumeroCelular = ? , NumeroTelefono = ? " + 
+		"                     WHERE idPersona = ?";
+		
+		String SQL2="UPDATE usuario SET  mail= ?, usuario = ?, contrasenia = ? , imagen = ?  WHERE idUsuario = ?";
+		mysql.establecerConexion();
+		Connection conectado = mysql.getConnection();
+		
+		try {
+			PreparedStatement pst = conectado.prepareStatement(SQL);
+			PreparedStatement pst2 = conectado.prepareStatement(SQL2);
 			
-			String SQL2="UPDATE usuario SET  mail= ?, usuario = ?, contrasenia = ? , imagen = ?  WHERE idUsuario = ?";
-			mysql.establecerConexion();
-			Connection conectado = mysql.getConnection();
+			pst.setString(1, usuario.getIdTipo());
+			pst.setString(2, usuario.getNombre());
+			pst.setString(3, usuario.getApellido());
+			pst.setString(4, usuario.getDni());
+			pst.setString(5, usuario.getDireccion());
+			pst.setString(6, usuario.getFecnac());
+			pst.setString(7, usuario.getSexo());
+			pst.setString(8, usuario.getNumeroCelular());
+			pst.setString(9, usuario.getNumeroTelefono());
+			pst.setString(10, usuario.getIdPersona());
+			pst2.setString(1, usuario.getMail());
+			pst2.setString(2, usuario.getUsuario());
+			pst2.setString(3, usuario.getPass());
+			pst2.setString(4, usuario.getImagen());
+			pst2.setString(5, usuario.getIdPersona());
 			
-			try {
-				PreparedStatement pst = conectado.prepareStatement(SQL);
-				PreparedStatement pst2 = conectado.prepareStatement(SQL2);
-				
-				pst.setString(1, usuario.getIdTipo());
-				pst.setString(2, usuario.getNombre());
-				pst.setString(3, usuario.getApellido());
-				pst.setString(4, usuario.getDni());
-				pst.setString(5, usuario.getDireccion());
-				pst.setString(6, usuario.getFecnac());
-				pst.setString(7, usuario.getSexo());
-				pst.setString(8, usuario.getNumeroCelular());
-				pst.setString(9, usuario.getNumeroTelefono());
-				pst.setString(10, usuario.getIdPersona());
-				pst2.setString(1, usuario.getMail());
-				pst2.setString(2, usuario.getUsuario());
-				pst2.setString(3, usuario.getPass());
-				pst2.setString(4, usuario.getImagen());
-				pst2.setString(5, usuario.getIdPersona());
-				
-				
-				int n = pst.executeUpdate();
-				mysql.cerrarConexion();
-				if (n != 0) {
+			
+			int n = pst.executeUpdate();
+			
+			if (n != 0) {
+				System.out.println("Se edito con exito en la tabla Pesona : "+usuario.getUsuario());
+				if (pst2.executeUpdate() != 0) {
+					System.out.println("Se edito con exito en la tabla Usuario : "+usuario.getUsuario());
+					mysql.cerrarConexion();
 					return true;
 				} else {
 					return false;
 				}
-			} catch (Exception e) {
-				e.printStackTrace();
+			} else {
 				return false;
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 		
 	}
 
