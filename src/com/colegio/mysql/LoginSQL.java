@@ -17,8 +17,8 @@ public class LoginSQL implements LoginInterfaz {
 	
 	@Override
 	public boolean iniciarSesion(Usuario user) {
-		String SQL = "SELECT A.usuario, A.contrasenia FROM colegio.usuario A "
-				+ "inner join colegio.persona B ON (a.idUsuario=b.idPersona); where A.usuario = ? and A.contrasenia = ?";
+		String SQL = "SELECT A.*, B.* FROM usuario A "
+				+ "inner join persona B ON (A.idUsuario=B.idPersona) where A.usuario = ? and A.contrasenia = ?";
 
 		mysql.establecerConexion();
 		Connection conectado = mysql.getConnection();
@@ -27,11 +27,11 @@ public class LoginSQL implements LoginInterfaz {
 			PreparedStatement pst = conectado.prepareStatement(SQL);
 			pst.setString(1, user.getUsuario());
 			pst.setString(2, user.getPass());
-
+			
 			ResultSet rs = pst.executeQuery();
 
 			if (rs.next()) {
-				pass = rs.getString("pass");
+				pass = rs.getString("contrasenia");
 			}
 			mysql.cerrarConexion();
 			if (pass != null) {

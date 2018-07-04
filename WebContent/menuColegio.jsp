@@ -40,7 +40,7 @@
                             <a href="#">About</a>
                             <a href="#">Services</a>
                             <a href="#">Clients</a>
-                            <a href="#">Contact</a>
+                            <a href="ServletCerrarSesion">Cerrar Session</a>
                         </div>
                     </div>
                 </div>

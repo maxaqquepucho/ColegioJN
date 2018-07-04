@@ -37,13 +37,13 @@ public class ServletUsuario extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 		
 		UsuarioInterfaz user = new UsuarioSQL(); 
 		
-		//Usuario usuario = (Usuario) session.getAttribute("usuario");
+		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		
-		if (true) {
+		if (usuario != null) {
 		
 		try {
 				List<Usuario> lista = user.mostrar();
@@ -60,7 +60,7 @@ public class ServletUsuario extends HttpServlet {
 			}
 			
 			RequestDispatcher despachador = request.getRequestDispatcher("menuColegio.jsp");
-		despachador.forward(request, response);
+			despachador.forward(request, response);
 			System.out.println("Llegaste con exito al ServletPersona");
 	}else {
 		RequestDispatcher despachador = request.getRequestDispatcher("error.jsp");

@@ -35,14 +35,15 @@ public class ServletLogin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.sendRedirect("ServletUsuario");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String user = request.getParameter("usuario");
+		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
 
 		Usuario usuario = new Usuario();
@@ -55,7 +56,7 @@ public class ServletLogin extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", usuario);
 			session.setAttribute("sesionIniciada", "iniciada");
-			RequestDispatcher despachador = request.getRequestDispatcher("ServletPersona");
+			RequestDispatcher despachador = request.getRequestDispatcher("ServletUsuario");
 			despachador.forward(request, response);
 			//
 			
