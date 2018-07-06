@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css" >
+        <link rel="stylesheet" href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
+
+        <title>Evento</title>
+    </head>
+    <body>
+        <style media="screen">
+        *{
+             box-sizing: border-box;
+        }
+            body div{
+                /* background: rgb(235, 236, 245); */
+                /* height: 100px; */
+            }
+
+            body .mensaje {
+                width: 55%;
+                height: 70px;
+                position: fixed;
+                bottom: 0;
+                background: rgb(48, 164, 21,.6);
+                border-radius: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                -webkit-box-shadow: 0px -3px 24px -4px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px -3px 24px -4px rgba(0,0,0,0.75);
+                box-shadow: 0px -3px 24px -4px rgba(0,0,0,0.75);
+
+                -webkit-transition: all .7s ease;
+                -moz-transition: all .7s ease;
+                -ms-transition: all .7s ease;
+                -o-transition: all .7s ease;
+                transition: all .7s ease;
+
+
+            }
+
+            .fadeout{
+                opacity: 0;
+            }
+
+
+            .mensaje .letras  {
+                width: 80%;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+
+
+            }
+
+            .mensaje .letras .parrafo{
+                font-size: 0.9em;
+                padding: 10px;
+                margin: auto;
+                color: white;
+                text-align: center;
+            }
+
+            .mensaje .icono  {
+                width: 15%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .mensaje .icono  i {
+
+                font-size: 1.8em;
+                color: white;
+            }
+        </style>
+
+        <!-- <div class="container" id="divv" >
+            <h3>Evento boton</h3>
+
+            <hr>
+            <button type="button" class="btn btn-dark" id="eventoBoton">Crear un componente</button>
+
+            <div class="" id="creado">
+
+            </div>
+            <hr>
+
+
+        </div> -->
+
+        <!-- <div class="mensaje">
+        <div class="letras">
+        <p class="parrafo">Lorem ipsdent, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            </div>
+            <div class="icono">
+            <i class="far fa-check-circle"></i>
+        </div>
+        </div> -->
+
+
+
+        <!-- <script src="js/jquery-3.3.1.min.js"> </script> -->
+        <!-- <script src="js/popper.min.js" ></script> -->
+        <!-- <script src="js/bootstrap.min.js" ></script> -->
+
+        <script >
+
+            const cargar = document.body.addEventListener('load', ejecutarBoton);
+            console.log(cargar + 'cargo exitosamente');
+             //ejecutarBoton();
+            function ejecutarBoton(){
+            }
+            (function(window,document){
+                let contenedor = document.createElement('div');
+                contenedor.className = 'mensaje';
+                contenedor.setAttribute('id','mensajeEmergente');
+
+
+                window.doToast = function(){
+                    contenedor.innerHTML = mensaje;
+                    document.body.appendChild(contenedor);
+
+                    setTimeout(function(){
+                        contenedor.addEventListener('transitionend', function(){
+                            document.body.removeChild(contenedor);
+                        }, false);
+                        contenedor.classList.add('fadeout');
+                    },2000);
+                }
+
+                let mensaje = `
+                <div class="letras">
+                <p class="parrafo">Lorem ipsdent, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                </div>
+                <div class="icono">
+                <i class="far fa-check-circle"></i>
+                </div>`;
+
+            })(window,document);
+
+            doToast();
+                // evt.preventDefault();
+        </script>
+    </body>
+</html>
