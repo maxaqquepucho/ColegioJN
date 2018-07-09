@@ -25,8 +25,8 @@
                     <button type="button" class="btn btn-outline-light" name="button"><i class="fa fa-search"></i> </button>
                 </div>
                 <div class="nav-right">
-                    <span><a class="" href="#home">Home</a></span>
-                    <span><a href="#about"><i class="fas fa-bars">About</i></a></span>
+                    <%-- <span><a class="" href="#home">Home</a></span> --%>
+                    <%-- <span><a href="#about"><i class="fas fa-bars">About</i></a></span> --%>
                     <span><img src="images/max.jpg" alt="" > </span>
                 </div>
             </div>
@@ -37,9 +37,9 @@
                             <span style="cursor:pointer" onclick="closeNav()"><i class="fas fa-bars "></i></span>
                         </div>
                         <div class="">
-                            <a href="#">About</a>
-                            <a href="#">Services</a>
-                            <a href="#">Clients</a>
+                            <a href="menuPerfil.jsp">Mi Perfil</a>
+                            <a href="index.html">Pagina Principal</a>
+                            <a href="http://localhost:3000/">Temperatura</a>
                             <a href="ServletCerrarSesion">Cerrar Session</a>
                         </div>
                     </div>
@@ -49,7 +49,9 @@
                 <div class=" mt-3 d-flex flex-wrap fle-row justify-content-around" style="width: 98%;">
                     <div class="" style="width: 70%; ">
                         <div class="col-12" >
-                        <table class="table table-hover table-dark table-responsive " id="tablaMenuColegio">
+                        <table class="table table-hover table-dark table-responsive " id="tablaMenuColegio" style="-webkit-box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.75);
+                        -moz-box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.75);
+                        box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.75);">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>

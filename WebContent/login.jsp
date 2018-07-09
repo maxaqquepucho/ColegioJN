@@ -6,7 +6,7 @@
    Pero esta parte se implementa al final, cuando ya todo este implementado OJO!*/
 String sesionIniciada =(String) session.getAttribute("sesionIniciada");
        if(sesionIniciada == "iniciada"){
-    	   response.sendRedirect("ServletPersona");
+    	   response.sendRedirect("ServletUsuario");
     	   System.out.println("redireccion");
       }
       System.out.println(sesionIniciada);
