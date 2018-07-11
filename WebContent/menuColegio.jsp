@@ -18,7 +18,7 @@
             <div class="topnav">
                 <div class="nav-left">
                     <span style="cursor:pointer" onclick="openNav()"><i class="fas fa-bars"></i></span>
-                    <!-- <span><a class="" href="#home"><i class="fas fa-bars">Jesus</i></a></span> -->
+                    <span><a class="" href="#home"><i class="fas fa-bars">Jesus de Nazareth</i></a></span>
                 </div>
                 <div class="search-container">
                     <input type="text" placeholder="Buscar..." name="search">
