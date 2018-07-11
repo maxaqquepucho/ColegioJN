@@ -61,8 +61,9 @@ public class ServletLogin extends HttpServlet {
 					);
 			
 			session.setAttribute("usuario", user2);
+			
 			session.setAttribute("sesionIniciada", "iniciada");
-			RequestDispatcher despachador = request.getRequestDispatcher("ServletUsuario");
+			RequestDispatcher despachador = request.getRequestDispatcher("ServletPerfil");
 			despachador.forward(request, response);
 			//
 			

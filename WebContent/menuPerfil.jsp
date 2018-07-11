@@ -1,6 +1,15 @@
+
+<%@page import="com.colegio.modelo.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+ <%
+    Usuario usuario = (Usuario) session.getAttribute("usuario");
+ 
+ %>
 
 <html lang="en" dir="ltr">
     <head>
@@ -26,7 +35,7 @@
                 <div class="nav-right">
                     <%-- <span><a class="" href="#home">Home</a></span> --%>
                     <%-- <span><a href="#about"><i class="fas fa-bars">About</i></a></span> --%>
-                    <span><img src="images/fotocolegio.jpg" alt="" > </span>
+                    <span><img src="<%out.print(usuario.getImagen()); %>" alt="" > </span>
                 </div>
             </div>
             <div class="row">
@@ -53,13 +62,13 @@
                     <div class="row mt-5 ">
                         <div class="col-md-3" style="box-shadow: inset 1px 1px #dedfe0,inset 0 -1px #dedfe0;">
                             <div class="col-md-12" align="center">
-                                <img class="img-responsive mt-3" src="images/fotocolegio.jpg" alt="" style="border-radius: 5px; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                                <img class="img-responsive mt-3" src="<%out.print(usuario.getImagen()); %>" alt="" style="border-radius: 5px; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                             </div>
                             <div class="col-md-12" style="text-align: center">
                                 <h4>
-                                    <p><small>Max Aqquepucho</small> </p>
+                                    <p><small><%out.print(usuario.getNombre() + " "+usuario.getApellido()); %></small> </p>
                                 </h4>
                             </div>
                             <hr class="row">
@@ -90,24 +99,24 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                                         <form>
                                             <div class="form-group ">
                                                 <label for="exampleInputEmail1">Usuario</label>
-                                                <input type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" disabled>
+                                                <input value="<%out.print(usuario.getUsuario()); %>"  type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" disabled>
                                                 <small id="emailHelp" class="form-text text-muted">Nosotros nunca compartiremos tu informacion a nadie.</small>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Nombre</label>
-                                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Nombre">
+                                                <input value="<%out.print(usuario.getNombre()); %>" type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Nombre">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Apellidos</label>
-                                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese apellidos">
+                                                <input value="<%out.print(usuario.getApellido()); %>" type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese apellidos">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Direccion</label>
-                                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Direccion">
+                                                <input value="<%out.print(usuario.getDireccion()); %>" type="text" class="form-control" id="exampleInputPassword1" placeholder="Direccion">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Email</label>
-                                                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="ejemplo@colgioJN.com">
+                                                <input value="<%out.print(usuario.getMail()); %>" type="email" class="form-control" id="exampleInputPassword1" placeholder="ejemplo@colgioJN.com">
                                             </div>
                                             <div class="form-group form-check">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">

@@ -1,6 +1,8 @@
 package com.colegio.controlador;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,16 +13,16 @@ import javax.servlet.http.HttpSession;
 import com.colegio.modelo.Usuario;
 
 /**
- * Servlet implementation class ServletCerrarSesion
+ * Servlet implementation class ServletPerfil
  */
-@WebServlet(name = "/ServletCerrarSesion", urlPatterns = {"/ServletCerrarSesion"})
-public class ServletCerrarSesion extends HttpServlet {
+@WebServlet("/ServletPerfil")
+public class ServletPerfil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletCerrarSesion() {
+    public ServletPerfil() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,19 +34,19 @@ public class ServletCerrarSesion extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession();
-		
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		
 		if (usuario != null) {
-			session.removeAttribute("usuario");
-			session.removeAttribute("sesionIniciada");
-			request.getRequestDispatcher("index.html").forward(request, response);
-			System.out.println(
-					session.getAttribute("usuario") +"\n"+
-					session.getAttribute("sesionIniciada")
-					);
+			RequestDispatcher despachador = request.getRequestDispatcher("menuPerfil.jsp");
+			despachador.forward(request, response);
+			System.out.println("Llegaste con exito al ServletPerfil");
+		} else {
+			RequestDispatcher despachador = request.getRequestDispatcher("error.jsp");
+			despachador.forward(request, response);
 
 		}
+		
+		
 	}
 
 	/**
