@@ -52,8 +52,8 @@ public class UsuarioSQL implements UsuarioInterfaz
 				usuario.setImagen(rs.getString("imagen"));
 				lista.add(usuario);
 				
-				System.out.println(lista.get(i).getNombre());
-				i++;
+				/*System.out.println(lista.get(i).getNombre());
+				i++;*/
 				
 			}
 			

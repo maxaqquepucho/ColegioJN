@@ -52,9 +52,15 @@ public class ServletLogin extends HttpServlet {
 		LoginInterfaz loginSQL = new LoginSQL();
 		
 		if (loginSQL.iniciarSesion(usuario)) {
-
-			HttpSession session = request.getSession();
-			session.setAttribute("usuario", usuario);
+			 Usuario user2 = loginSQL.obtenerUsuario(usuario);
+			 HttpSession session = request.getSession();
+			//Usuario usuario = new Usuario();
+			System.out.println(
+					user2.getNombre() + " 1 \n" +
+				    user2.getApellido()+" 2 \n"				
+					);
+			
+			session.setAttribute("usuario", user2);
 			session.setAttribute("sesionIniciada", "iniciada");
 			RequestDispatcher despachador = request.getRequestDispatcher("ServletUsuario");
 			despachador.forward(request, response);
