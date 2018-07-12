@@ -45,11 +45,11 @@
                             <span style="cursor:pointer" onclick="closeNav()"><i class="fas fa-bars "></i></span>
                         </div>
                         <div class="">
-                            <a href="menuPerfil.jsp">Mi Perfil</a>
-                            <a href="index.html">Pagina Principal</a>
-                            <a href="localhost:300">Temperatura</a>
+                            <a href="menuPerfil.jsp"><i class="fas fa-address-card"></i> Mi Perfil</a>
+                            <a href="index.html"><i class="fas fa-home"></i> Pagina Principal</a>
+                            <a href="localhost:300"><i class="fas fa-thermometer"></i> Temperatura</a>
                             <a href="ServletUsuario">Mantenimiento</a>
-                            <a href="ServletCerrarSesion">Cerrar Session</a>
+                            <a href="ServletCerrarSesion">Cerrar Sesión</a>
                         </div>
                     </div>
                 </div>
@@ -75,12 +75,16 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                             <div class="row">
                                 <div class="list-group" style="width:100%;">
                                     <a href="index.html" class="list-group-item list-group-item-action">
-                                    Jesus de Nasareth
+                                    <i class="fas fa-home"></i> Jesús de Nazareth
                                     </a>
-                                    <a href="menuPerfil.jsp" class="list-group-item list-group-item-action">Mi perfil</a>
-                                    <a href="menuFotografia.jsp" class="list-group-item list-group-item-action">Fotografia</a>
-                                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                                    <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+                                    <a href="menuPerfil.jsp" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-address-card"></i> Mi perfil</a>
+                                    <a href="menuFotografia.jsp" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-camera"></i> Fotografía</a>
+                                    <a href="#" class="list-group-item list-group-item-action disabled">
+                                    <i class="fas fa-book"></i> Mis Asignaturas</a>
+                                    <a href="#" class="list-group-item list-group-item-action disabled">
+                                    <i class="fas fa-money-bill-wave"></i> Pagos</a>
                                 </div>
                             </div>
                         </div>
@@ -88,8 +92,8 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                         <div class="col-md-9" style="border: 1px solid #dedfe0; padding: 15px;">
                             <div class="col-md-12" style="text-align: center">
                                 <h3>
-                                    Mi Perfil
-                                    <p><small class="text-muted">Aï¿½ade y modica tu informacion</small> </p>
+                                    <i class="fas fa-user"></i> Mi Perfil
+                                    <p><small class="text-muted">Añade y modica tu informacion</small> </p>
                                 </h3>
                             </div>
                             <hr>
@@ -136,7 +140,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
                                         </form>
                                     </div>
 

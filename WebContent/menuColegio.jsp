@@ -18,7 +18,7 @@
             <div class="topnav">
                 <div class="nav-left">
                     <span style="cursor:pointer" onclick="openNav()"><i class="fas fa-bars"></i></span>
-                    <span><a class="" href="#home"><i class="fas fa-bars">Jesus de Nazareth</i></a></span>
+                    <span><a class="" href="#home"><i class="fas fa-bars">Jesús de Nazareth</i></a></span>
                 </div>
                 <div class="search-container">
                     <input type="text" placeholder="Buscar..." name="search">
@@ -38,9 +38,9 @@
                         </div>
                         <div class="">
                             <a href="menuPerfil.jsp">Mi Perfil</a>
-                            <a href="index.html">Pagina Principal</a>
+                            <a href="index.html">Página Principal</a>
                             <a href="http://localhost:3000/">Temperatura</a>
-                            <a href="ServletCerrarSesion">Cerrar Session</a>
+                            <a href="ServletCerrarSesion">Cerrar Sesión</a>
                         </div>
                     </div>
                 </div>
@@ -62,14 +62,14 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">DNI</th>
                                     <th scope="col">Sexo</th>
-                                    <th scope="col">Direccion</th>
+                                    <th scope="col">Dirección</th>
                                     <th scope="col">link</th>
                                     <th scope="col">Fecha</th>
                                     <th scope="col">Celular</th>
                                     <th scope="col">Telefono</th>
                                     <th scope="col">Tipo</th>
-                                    <th scope="col">Accion 1</th>
-                                    <th scope="col">Accion 2</th>
+                                    <th scope="col">Acción 1</th>
+                                    <th scope="col">Acción 2</th>
                                 </tr>
                             </thead>
                             <tbody id="usuariosColegio">
@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputAddress2">Direccion</label>
+                                <label for="inputAddress2">Dirección</label>
                                 <input type="text" class="form-control" id="direccion" placeholder="Ingrese direccion">
                             </div>
                             <div class="form-group">
@@ -171,7 +171,7 @@
                                     <input type="text" class="form-control" id="celular" placeholder="Celular" >
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="inputZip">Telefono</label>
+                                    <label for="inputZip">Teléfono</label>
                                     <input type="text" class="form-control" id="telefono" placeholder="Telefono">
                                 </div>
                             </div>
