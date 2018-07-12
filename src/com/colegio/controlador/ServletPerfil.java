@@ -57,7 +57,7 @@ public class ServletPerfil extends HttpServlet {
 				user2.setImagen(usuario.getImagen());
 				
 				if (usuarioSQL.actualizar(user2)) {
-					System.out.println("");
+					System.out.println("Se actualizo los Datos Correctamente");
 					RequestDispatcher despachador = request.getRequestDispatcher("menuPerfil.jsp");
 					despachador.forward(request, response);
 				} else {
