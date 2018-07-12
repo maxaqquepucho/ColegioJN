@@ -8,7 +8,7 @@
 
  <%
     Usuario usuario = (Usuario) session.getAttribute("usuario");
- 
+
  %>
 
 <html lang="en" dir="ltr">
@@ -98,25 +98,38 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                                     <div class="col-md-8">
                                         <form>
                                             <div class="form-group ">
+                                                <label for="exampleInputEmail1">ID</label>
+                                                <input name="idPersona" value="<%out.print(usuario.getIdPersona()); %>"  type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ID" disabled>
+                                                <input type="hidden" name="accion" value="INS">
+                                            </div>
+                                            <div class="form-group ">
                                                 <label for="exampleInputEmail1">Usuario</label>
-                                                <input value="<%out.print(usuario.getUsuario()); %>"  type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" disabled>
+                                                <input name="usuario" value="<%out.print(usuario.getUsuario()); %>"  type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" disabled>
                                                 <small id="emailHelp" class="form-text text-muted">Nosotros nunca compartiremos tu informacion a nadie.</small>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Nombre</label>
-                                                <input value="<%out.print(usuario.getNombre()); %>" type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Nombre">
+                                                <input name="nombre" value="<%out.print(usuario.getNombre()); %>" type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Nombre">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Apellidos</label>
-                                                <input value="<%out.print(usuario.getApellido()); %>" type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese apellidos">
+                                                <input name="apellido" value="<%out.print(usuario.getApellido()); %>" type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese apellidos">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Direccion</label>
-                                                <input value="<%out.print(usuario.getDireccion()); %>" type="text" class="form-control" id="exampleInputPassword1" placeholder="Direccion">
+                                                <input name="direccion" value="<%out.print(usuario.getDireccion()); %>" type="text" class="form-control" id="exampleInputPassword1" placeholder="Direccion">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Email</label>
-                                                <input value="<%out.print(usuario.getMail()); %>" type="email" class="form-control" id="exampleInputPassword1" placeholder="ejemplo@colgioJN.com">
+                                                <input name="mail" value="<%out.print(usuario.getMail()); %>" type="email" class="form-control" id="exampleInputPassword1" placeholder="ejemplo@colgioJN.com">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Celular</label>
+                                                <input name="celular" value="<%out.print(usuario.getNumeroCelular()); %>" type="number" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Celular">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Telefono</label>
+                                                <input name="telefono" value="<%out.print(usuario.getNumeroTelefono()); %>" type="number" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Telefono">
                                             </div>
                                             <div class="form-group form-check">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
