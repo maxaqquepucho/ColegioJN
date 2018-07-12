@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="es" >
     <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="css/bootstrap.min.css" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
@@ -18,7 +18,7 @@
             <div class="topnav">
                 <div class="nav-left">
                     <span style="cursor:pointer" onclick="openNav()"><i class="fas fa-bars"></i></span>
-                    <span><a class="" href="#home"><i class="fas fa-bars">Jesus de Nazareth</i></a></span>
+                    <span><a class="text-uppercase" style="text-decoration: none; color:white;" href="#home"><i class="fas fa-home"> Jesus de Nazareth</i></a></span>
                 </div>
                 <div class="search-container">
                     <input type="text" placeholder="Buscar..." name="search">
@@ -37,10 +37,11 @@
                             <span style="cursor:pointer" onclick="closeNav()"><i class="fas fa-bars "></i></span>
                         </div>
                         <div class="">
-                            <a href="menuPerfil.jsp">Mi Perfil</a>
-                            <a href="index.html">Pagina Principal</a>
-                            <a href="http://localhost:3000/">Temperatura</a>
-                            <a href="ServletCerrarSesion">Cerrar Session</a>
+                            <a href="menuPerfil.jsp"><i class="fas fa-address-card"></i> Mi Perfil</a>
+                            <a href="index.html"><i class="fas fa-home"></i> Pagina Principal</a>
+                            <a href="localhost:300"><i class="fas fa-thermometer"></i> Temperatura</a>
+                            <a href="ServletUsuario"><i class="fas fa-user-cog"></i> Mantenimiento</a>
+                            <a href="ServletCerrarSesion"><i class="fas fa-door-open"></i> Cerrar Sesion</a>
                         </div>
                     </div>
                 </div>
@@ -90,10 +91,10 @@
                                         <td>${n.numeroTelefono}</td>
                                         <td>${n.idTipo}</td>
                                         <td>
-                                            <a href="javascript:void(0)" class="btn btn-primary " onclick="editarFilaRow(this);" >Editar</a>
+                                            <a href="javascript:void(0)" class="btn btn-primary " onclick="editarFilaRow(this);" ><i class="fas fa-edit"></i> Editar</a>
                                         </td>
                                         <td>
-                                            <a href="javascript:void(0)" class="btn btn-info" onclick="eliminarFila(this)">Eliminar</a>
+                                            <a href="javascript:void(0)" class="btn btn-info" onclick="eliminarFila(this)"><i class="fas fa-trash-alt"></i> Eliminar</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -175,8 +176,8 @@
                                     <input type="text" class="form-control" id="telefono" placeholder="Telefono">
                                 </div>
                             </div>
-                            <input id="btnAgregar" type="button" class="btn btn-primary" value="Agregar" input>
-                            <button type="reset" class="btn btn-primary">Cancelar</button>
+                            <input id="btnAgregar" type="button" class="btn btn-primary" value="Agregar">
+                            <button type="reset" class="btn btn-primary"><i class="fas fa-ban"></i> Cancelar</button>
                         </form>
                     </div>
                     </div>

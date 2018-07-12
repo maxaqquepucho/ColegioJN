@@ -1,7 +1,7 @@
 
 <%@page import="com.colegio.modelo.Usuario"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,7 +13,7 @@
 
 <html lang="en" dir="ltr">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="css/bootstrap.min.css" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
@@ -48,8 +48,8 @@
                             <a href="menuPerfil.jsp"><i class="fas fa-address-card"></i> Mi Perfil</a>
                             <a href="index.html"><i class="fas fa-home"></i> Pagina Principal</a>
                             <a href="localhost:300"><i class="fas fa-thermometer"></i> Temperatura</a>
-                            <a href="ServletUsuario">Mantenimiento</a>
-                            <a href="ServletCerrarSesion">Cerrar Sesi�n</a>
+                            <a href="ServletUsuario"><i class="fas fa-user-cog"></i> Mantenimiento</a>
+                            <a href="ServletCerrarSesion"><i class="fas fa-door-open"></i> Cerrar Sesion</a>
                         </div>
                     </div>
                 </div>
@@ -75,12 +75,12 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                             <div class="row">
                                 <div class="list-group" style="width:100%;">
                                     <a href="index.html" class="list-group-item list-group-item-action">
-                                    <i class="fas fa-home"></i> Jes�s de Nazareth
+                                    <i class="fas fa-home"></i> Jesus de Nazareth
                                     </a>
                                     <a href="menuPerfil.jsp" class="list-group-item list-group-item-action">
                                     <i class="fas fa-address-card"></i> Mi perfil</a>
                                     <a href="menuFotografia.jsp" class="list-group-item list-group-item-action">
-                                    <i class="fas fa-camera"></i> Fotograf�a</a>
+                                    <i class="fas fa-camera"></i> Fotografia</a>
                                     <a href="#" class="list-group-item list-group-item-action disabled">
                                     <i class="fas fa-book"></i> Mis Asignaturas</a>
                                     <a href="#" class="list-group-item list-group-item-action disabled">
@@ -93,7 +93,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                             <div class="col-md-12" style="text-align: center">
                                 <h3>
                                     <i class="fas fa-user"></i> Mi Perfil
-                                    <p><small class="text-muted">A�ade y modica tu informacion</small> </p>
+                                    <p><small class="text-muted">Añade y modica tu informacion</small> </p>
                                 </h3>
                             </div>
                             <hr>
@@ -132,7 +132,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                                                 <input name="celular" value="<%out.print(usuario.getNumeroCelular()); %>" type="number" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Celular">
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Tel�fono</label>
+                                                <label for="exampleInputPassword1">Telefono</label>
                                                 <input name="telefono" value="<%out.print(usuario.getNumeroTelefono()); %>" type="number" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Telefono">
                                             </div>
                                             <div class="form-group form-check">
