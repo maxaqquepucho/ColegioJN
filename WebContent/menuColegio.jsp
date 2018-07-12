@@ -18,7 +18,7 @@
             <div class="topnav">
                 <div class="nav-left">
                     <span style="cursor:pointer" onclick="openNav()"><i class="fas fa-bars"></i></span>
-                    <span><a class="text-uppercase" style="text-decoration: none; color:white;" href="#home"><i class="fas fa-home"> Jesus de Nazareth</i></a></span>
+                    <span><a class="text-uppercase" style="transition: none;text-decoration: none; color:white;" href="#home"><i class="fas fa-home"> Jesus de Nazareth</i></a></span>
                 </div>
                 <div class="search-container">
                     <input type="text" placeholder="Buscar..." name="search">
@@ -41,6 +41,8 @@
                             <a href="index.html"><i class="fas fa-home"></i> Pagina Principal</a>
                             <a href="localhost:300"><i class="fas fa-thermometer"></i> Temperatura</a>
                             <a href="ServletUsuario"><i class="fas fa-user-cog"></i> Mantenimiento</a>
+                            <a href="javascript:void(0)" id="descargarExcel">Descargar Excel</a>
+                            <a href="javascript:void(0)" id="descargarPDF">Descargar PDF</a>
                             <a href="ServletCerrarSesion"><i class="fas fa-door-open"></i> Cerrar Sesion</a>
                         </div>
                     </div>
@@ -205,5 +207,11 @@
         <!-- <script src="js/popper.min.js" ></script> -->
         <script src="js/bootstrap.min.js" ></script>
         <script src="js/menuColegio.js"></script>
+        <%-- <script src="js/jsPDF.js"></script> --%>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
+        <script src="js/html2canvas.js"></script>
+        <script type="text/javascript" src="js/descargarPDF.js"></script>
+        <script type="text/javascript" src="js/descargarExcel.js"></script>
     </body>
 </html>

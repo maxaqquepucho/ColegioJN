@@ -86,7 +86,7 @@ box-shadow: 0px 7px 11px -3px rgba(0,0,0,0.75);
     transition: all  .5s;
 }
 
-.topnav .nav-left span:hover{
+.topnav .nav-left span:hover:first-child{
     font-size: 1.2em;
     background: rgb(173, 173, 173);
     border-radius: 50%;

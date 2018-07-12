@@ -36,9 +36,9 @@
                             <span style="cursor:pointer" onclick="closeNav()"><i class="fas fa-bars "></i></span>
                         </div>
                         <div class="">
-                            <a href="menuPerfil.jsp">Mi Perfil</a>
+                            <a href="ServletPerfil">Mi Perfil</a>
                             <a href="index.html">Pagina Principal</a>
-                            <a href="localhost:300">Temperatura</a>
+                            <a href="localhost:3000">Temperatura</a>
                             <a href="ServletCerrarSession">Cerrar Session</a>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                                     <a href="index.html" class="list-group-item list-group-item-action">
                                     Jesus de Nasareth
                                     </a>
-                                    <a href="menuPerfil.jsp" class="list-group-item list-group-item-action">Mi perfil</a>
+                                    <a href="ServletPerfil" class="list-group-item list-group-item-action">Mi perfil</a>
                                     <a href="menuFotografia.jsp" class="list-group-item list-group-item-action">Fotografia</a>
                                     <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
                                     <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
@@ -145,6 +145,6 @@
         <script src="js/jquery-3.3.1.min.js"> </script>
         <!-- <script src="js/popper.min.js" ></script> -->
         <script src="js/bootstrap.min.js" ></script>
-        <script src="js/menuColegio.js"></script>
+   
     </body>
 </html>

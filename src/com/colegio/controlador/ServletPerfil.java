@@ -40,36 +40,47 @@ public class ServletPerfil extends HttpServlet {
 		UsuarioInterfaz usuarioSQL = new UsuarioSQL();
 		if (usuario != null) {
 			String accion = request.getParameter("accion");
-			if (accion == "INS") {
-				Usuario user2 = new Usuario();
-				user2.setIdPersona(usuario.getIdPersona());
-				user2.setNombre(request.getParameter("nombre"));
-				user2.setApellido(request.getParameter("apellido"));
-				user2.setDni(usuario.getDni());
-				user2.setDireccion(request.getParameter("direccion"));
-				user2.setFecnac(usuario.getFecnac());
-				user2.setSexo(usuario.getSexo());
-				user2.setNumeroCelular(request.getParameter("celular"));
-				user2.setNumeroTelefono(request.getParameter("telefono"));
-				user2.setMail(request.getParameter("mail"));
-				user2.setUsuario(usuario.getUsuario());
-				user2.setPass(usuario.getPass());
-				user2.setImagen(usuario.getImagen());
-				
-				if (usuarioSQL.actualizar(user2)) {
-					System.out.println("Se actualizo los Datos Correctamente");
-					RequestDispatcher despachador = request.getRequestDispatcher("menuPerfil.jsp");
-					despachador.forward(request, response);
-				} else {
-					System.out.println("Nose puedo Editar tus Datos: "+ usuario.getNombre());
+			if (accion != null) {
+				switch(accion) {
+					case "INS":
+						Usuario user2 = new Usuario();
+						user2.setIdPersona(usuario.getIdPersona());
+						user2.setNombre(request.getParameter("nombre"));
+						user2.setApellido(request.getParameter("apellido"));
+						user2.setDni(usuario.getDni());
+						user2.setDireccion(request.getParameter("direccion"));
+						user2.setFecnac(usuario.getFecnac());
+						user2.setSexo(usuario.getSexo());
+						user2.setNumeroCelular(request.getParameter("celular"));
+						user2.setNumeroTelefono(request.getParameter("telefono"));
+						user2.setMail(request.getParameter("mail"));
+						user2.setUsuario(usuario.getUsuario());
+						user2.setPass(usuario.getPass());
+						user2.setImagen(usuario.getImagen());
+						user2.setIdTipo(usuario.getIdTipo());
+						
+						if (usuarioSQL.actualizar(user2)) {
+							System.out.println("Se actualizo los Datos Correctamente");
+							RequestDispatcher despachador = request.getRequestDispatcher("menuPerfil.jsp");
+							despachador.forward(request, response);
+						} else {
+							System.out.println("Nose puedo Editar tus Datos: "+ usuario.getNombre());
+						}
+						
+						break;
+					default: 
+						RequestDispatcher despachador = request.getRequestDispatcher("menuPerfil.jsp");
+						despachador.forward(request, response);
+						System.out.println("Llegaste con exito al ServletPerfil");
+						break;
 				}
-				
-				
 			} else {
 				RequestDispatcher despachador = request.getRequestDispatcher("menuPerfil.jsp");
 				despachador.forward(request, response);
 				System.out.println("Llegaste con exito al ServletPerfil");
 			}
+			
+			
 			
 		} else {
 			RequestDispatcher despachador = request.getRequestDispatcher("error.jsp");
