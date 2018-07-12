@@ -12,7 +12,7 @@ public class Login extends conexion
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		String sql="SELECT A.idTipo ,B.usuario FROM colegio.persona A "
-				+ "INNER JOIN colegio.usuario B ON (A.idUsuario=B.idUsuario) where usuario = ? ";
+				+ "INNER JOIN colegio.usuario B ON (A.idPersona=B.idUsuario) where usuario = ? ";
 
 		try
 		{

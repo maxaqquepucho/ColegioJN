@@ -34,7 +34,7 @@ public class LoginSQL implements LoginInterfaz {
 				pass = rs.getString("pass");
 			}
 			mysql.cerrarConexion();
-			if (pass != null) {
+			if (pass!=null) {
 				return true;
 			} else {
 				return false;

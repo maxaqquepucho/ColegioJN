@@ -38,7 +38,7 @@ public class LlenarDatos extends conexion
 	{
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql="SELECT A.nombre FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idUsuario = B.idUsuario) where B.usuario = ?";
+		String sql="SELECT A.nombre FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idPersona = B.idUsuario) where B.usuario = ?";
 
 		try
 		{
@@ -63,7 +63,7 @@ public class LlenarDatos extends conexion
 	{
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql="SELECT A.apellido FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idUsuario = B.idUsuario) where B.usuario = ?";
+		String sql="SELECT A.apellido FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idPersona = B.idUsuario) where B.usuario = ?";
 
 		try
 		{
@@ -88,7 +88,7 @@ public class LlenarDatos extends conexion
 	{
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql="SELECT A.DNI FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idUsuario = B.idUsuario) where B.usuario = ?";
+		String sql="SELECT A.DNI FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idPersona = B.idUsuario) where B.usuario = ?";
 
 		try
 		{
@@ -113,7 +113,7 @@ public class LlenarDatos extends conexion
 	{
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql="SELECT A.Direccion FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idUsuario = B.idUsuario) where B.usuario = ?";
+		String sql="SELECT A.Direccion FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idPersona = B.idUsuario) where B.usuario = ?";
 
 		try
 		{
@@ -138,7 +138,7 @@ public class LlenarDatos extends conexion
 	{
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql="SELECT A.Sexo FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idUsuario = B.idUsuario) where B.usuario = ?";
+		String sql="SELECT A.Sexo FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idPersona = B.idUsuario) where B.usuario = ?";
 
 		try
 		{
@@ -164,7 +164,7 @@ public class LlenarDatos extends conexion
 	{
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql="SELECT A.NumeroCelular FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idUsuario = B.idUsuario) where B.usuario = ?";
+		String sql="SELECT A.NumeroCelular FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idPersona = B.idUsuario) where B.usuario = ?";
 
 		try
 		{
@@ -189,7 +189,7 @@ public class LlenarDatos extends conexion
 	{
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql="SELECT A.NumeroTelefono FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idUsuario = B.idUsuario) where B.usuario = ?";
+		String sql="SELECT A.NumeroTelefono FROM colegio.persona A INNER JOIN colegio.usuario B ON(A.idPersona = B.idUsuario) where B.usuario = ?";
 
 		try
 		{
