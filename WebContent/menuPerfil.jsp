@@ -132,7 +132,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                                                 <input name="celular" value="<%out.print(usuario.getNumeroCelular()); %>" type="number" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Celular">
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Telefono</label>
+                                                <label for="exampleInputPassword1">Teléfono</label>
                                                 <input name="telefono" value="<%out.print(usuario.getNumeroTelefono()); %>" type="number" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Telefono">
                                             </div>
                                             <div class="form-group form-check">
