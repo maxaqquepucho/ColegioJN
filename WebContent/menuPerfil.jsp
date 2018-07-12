@@ -96,7 +96,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
                             <div class="col-md-12" >
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-md-8">
-                                        <form>
+                                        <form action="ServletPerfil" method="GET">
                                             <div class="form-group ">
                                                 <label for="exampleInputEmail1">ID</label>
                                                 <input name="idPersona" value="<%out.print(usuario.getIdPersona()); %>"  type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ID" disabled>
@@ -167,6 +167,6 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"  width="120" height="150">
         <script src="js/jquery-3.3.1.min.js"> </script>
         <!-- <script src="js/popper.min.js" ></script> -->
         <script src="js/bootstrap.min.js" ></script>
-        <script src="js/menuColegio.js"></script>
+        
     </body>
 </html>
