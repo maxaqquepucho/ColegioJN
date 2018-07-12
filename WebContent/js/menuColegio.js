@@ -1,5 +1,5 @@
 
-let url = 'ws://localhost:8080/ColegioA/UsuarioWebSocket',
+let url = 'ws://'+window.location.hostname+':8080/ColegioA/UsuarioWebSocket',
     ws = new WebSocket(url),
  btnAgregar = document.getElementById("btnAgregar");
 

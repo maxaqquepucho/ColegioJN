@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+ <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<html lang="es" >
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> -->
+        <title>Registrar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/estilos-registrar.css">
+        <link rel="stylesheet" href="iconos1/style.css">
+        <style media="screen">
+        .toast-container {
+            position: fixed;
+            width: 150px;
+
+            bottom: 0;
+            z-index: 10; /* sobre todo lo demás */
+            }
+
+            .toast-toast {
+            font-size: 250%;
+            margin-bottom: 3px;
+            border-radius: 2px;
+            border: 1px green;
+            background: #98FF98;
+            text-align: center;
+            line-height: 1;
+            transition: all 0.5s;
+            }
+
+            .fadeout{
+            opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-principal ">
+
+                <nav class="navegador">
+                    <div class="">
+                        <a class="nav-boton " href="#"><i class="fab fa-apple"></i><span>JESÚS DE NAZARETH</span></a>
+                    </div>
+                    <div class="" >
+                        <a class="nav-boton" href="login.html"><i class="fab fa-angular"></i><span>Login</span></a>
+                        <a class="nav-boton" href="#"><i class="fab fa-angular"></i><span>Registrar</span></a>
+
+                    </div>
+                </nav>
+
+                <div class=" container-login">
+
+                    <form class="formulario" action="index.html" method="post">
+
+                        <div class="">
+                            <div class="double-div" >
+
+                                <div class="input-1">
+                                    <i class="icon-user2 icon ml-3"></i>
+                                    <input class="col-10" type="text" id="name" placeholder="Nombre"/>
+                                </div>
+
+
+                                <div class="input-1 ">
+                                    <i class="icon-lock icon ml-3"></i>
+                                    <input class="col-10" type="text" id="name" placeholder="Apellidos"/>
+                                </div>
+                                <div class="input-1 ">
+                                    <i class="icon-lock icon ml-3"></i>
+                                    <input class="col-10" type="email" id="name" placeholder="Correo Electrónico"/>
+                                </div>
+
+                            </div>
+
+                            <div class="double-div" >
+
+                                <div class=" double-component ">
+                                    <div class="1">
+                                        <i class="icon-lock icon ml-3"></i>
+                                        <input class="col-10" type="date" id="name" placeholder="Fecha"/>
+                                    </div>
+                                    <div class="1">
+                                        <i class="icon-lock icon ml-3"></i>
+                                        <input class="col-10" type="text" id="name" placeholder="DNI"/>
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <div class="input-1">
+                                    <i class="icon-user2 icon ml-3"></i>
+                                    <input class="col-10" type="text" id="name" placeholder="Numero de Celular"/>
+                                </div>
+                                <div class="input-1">
+                                    <i class="icon-user2 icon ml-3"></i>
+                                    <input class="col-10" type="text" id="name" placeholder="Numero de Telefono"/>
+                                </div>
+                                <div class="input-1">
+                                    <i class="icon-user2 icon ml-3"></i>
+                                    <input class="col-10" type="text" id="name" placeholder="Direccion"/>
+                                </div>
+
+
+                            </div>
+
+                            <div class="select-combo">
+                                <select>
+                                    <option value="0">Select car:</option>
+                                    <option value="1">Audi</option>
+                                    <option value="2">BMW</option>
+                                    <option value="3">Citroen</option>
+                                    <option value="4">Ford</option>
+                                    <option value="5">Honda</option>
+                                    <option value="6">Jaguar</option>
+                                    <option value="7">Land Rover</option>
+                                    <option value="8">Mercedes</option>
+                                    <option value="9">Mini</option>
+                                    <option value="10">Nissan</option>
+                                    <option value="11">Toyota</option>
+                                    <option value="12">Volvo</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="" >
+                            <div class=" double-component ">
+                                <div class="1">
+                                    <i class="icon-lock icon ml-3"></i>
+                                    <input class="col-10" type="text" id="name" placeholder="Sexo"/>
+                                </div>
+                                <div class="1">
+                                    <i class="icon-lock icon ml-3"></i>
+                                    <input class="col-10" type="text" id="name" placeholder="Link de Imagen"/>
+                                </div>
+                            </div>
+                            <div class="input-1">
+                                <i class="icon-user icon ml-3"></i>
+                                <input class="col-10" type="text" id="name" placeholder="Usuario"/>
+                            </div>
+
+
+
+                            <div class=" double-component ">
+                                <div class="1">
+                                    <i class="icon-lock icon ml-3"></i>
+                                    <input class="col-10" type="text" id="name" placeholder="Contraseña"/>
+                                </div>
+                                <div class="1">
+                                    <i class="icon-lock icon ml-3"></i>
+                                    <input class="col-10" type="text" id="name" placeholder=" Confirmar"/>
+                                </div>
+                            </div>
+
+                            <div class="button">
+                                <button type="submit">Registrar</button>
+                            </div>
+
+                        </div>
+
+
+                    </form>
+
+            </div>
+        </div>
+
+        <!-- atom://teletype/portal/7729ab1c-e769-4ea8-ae77-e8b75356c81b -->
+        <script src="js/jquery-3.3.1.min.js"> </script>
+        <script src="js/popper.min.js" ></script>
+        <script src="js/bootstrap.min.js" ></script>
+
+        <script type="text/javascript">
+            (function(window, document) { // asilamos el componente
+              // creamos el contedor de las tostadas o la tostadora
+              var container = document.createElement('div');
+              container.className = 'toast-container';
+              document.body.appendChild(container);
+
+              // esta es la funcion que hace la tostada
+              window.doToast = function(message) {
+                // creamos tostada
+                var toast = document.createElement('div');
+                toast.className = 'toast-toast';
+                toast.innerHTML = message;
+
+                // agregamos a la tostadora
+                container.appendChild(toast);
+
+                // programamos su eliminación
+                setTimeout(function() {
+                  // cuando acabe de desaparecer, lo eliminamos del dom.
+                  toast.addEventListener("transitionend", function() {
+                     container.removeChild(toast);
+                  }, false);
+
+                  // agregamos un estilo que inicie la "transition".
+                  toast.classList.add("fadeout");
+                }, 2000); // OP dijo, "solo dos segundos"
+              }
+            })(window, document);
+
+            // ejempo de uso
+            doToast("Hola mundo!");
+
+            // ejemplo retardado de uso
+            setTimeout(function() {
+               doToast("Soy una tostada");
+            }, 1200);
+
+
+            console.log(doToast);
+        </script>
+
+    </body>
+</html>

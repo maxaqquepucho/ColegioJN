@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+/*Con esto estamos validando si realmente esta logeado el usuario,
+   Pero esta parte se implementa al final, cuando ya todo este implementado OJO!*/
+String sesionIniciada =(String) session.getAttribute("sesionIniciada");
+       if(sesionIniciada == "iniciada"){
+    	   response.sendRedirect("ServletUsuario");
+    	   System.out.println("redireccion");
+      }
+      System.out.println(sesionIniciada);
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -38,7 +48,7 @@
 
              <div class=" container-login col-12-md-12  ">
 
-                 <form class="formulario" action="iniciarSesion" method="post">
+                 <form class="formulario" action="ServletLogin" method="post">
                      <div >
                          <div class="input-2">
                              <img src="images/jn-login3.png" alt="" width="50" height="50">

@@ -35,14 +35,15 @@ public class ServletLogin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.sendRedirect("ServletUsuario");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String user = request.getParameter("usuario");
+		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
 
 		Usuario usuario = new Usuario();
@@ -51,11 +52,18 @@ public class ServletLogin extends HttpServlet {
 		LoginInterfaz loginSQL = new LoginSQL();
 		
 		if (loginSQL.iniciarSesion(usuario)) {
-
-			HttpSession session = request.getSession();
-			session.setAttribute("usuario", usuario);
+			 Usuario user2 = loginSQL.obtenerUsuario(usuario);
+			 HttpSession session = request.getSession();
+			//Usuario usuario = new Usuario();
+			System.out.println(
+					user2.getNombre() + " 1 \n" +
+				    user2.getApellido()+" 2 \n"				
+					);
+			
+			session.setAttribute("usuario", user2);
+			
 			session.setAttribute("sesionIniciada", "iniciada");
-			RequestDispatcher despachador = request.getRequestDispatcher("ServletPersona");
+			RequestDispatcher despachador = request.getRequestDispatcher("ServletPerfil");
 			despachador.forward(request, response);
 			//
 			
