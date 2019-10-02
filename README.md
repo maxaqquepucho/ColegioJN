@@ -1,1 +1,1 @@
-# ColegioJN  Proyeto para Ganar en el ExporWork :v
+# ColegioJN  Proyeto desarrollando con java, utiliza websocket y una  base de datos Mysql.
